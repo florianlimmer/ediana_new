@@ -11,10 +11,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- Other CSS -->
-
-    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="general_style.css">
-
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -39,7 +37,7 @@
                 <a class="nav-link" href="#">Corpus</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Literature</a>
+                <a class="nav-link" href="literature.php">Literature</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="staff.php">Staff</a>
