@@ -9,6 +9,4 @@
         </div>
     </div>
 
-<div class="container">
-
-    <div class="content">
+<?php include "begincontent.php"; ?>
