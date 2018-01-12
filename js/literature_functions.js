@@ -1,19 +1,48 @@
 
+//Slider Script
+
 $( function() {
     $( "#slider-range" ).slider({
         range: true,
-        min: 0,
-        max: 500,
-        values: [ 75, 300 ],
+        min: 1950,
+        max: 2018,
+        values: [ 1980, 2000 ],
         slide: function( event, ui ) {
-            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            $( "#amount" ).val( "from " + ui.values[ 0 ] + " to " + ui.values[ 1 ] );
         }
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-        " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#amount" ).val( "from " + $( "#slider-range" ).slider( "values", 0 ) +
+        " to " + $( "#slider-range" ).slider( "values", 1 ) );
 } );
 
-//TODO: Type rauslöschen, wenn es schonmal angewählt wurde
+
+//Disable Year when Slider Acitvated
+$("#button_range").click(
+
+    function (e){
+        e.preventDefault();
+
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $("#inputYear").prop('disabled', false)
+        } else {
+            $(this).addClass('active');
+            $("#inputYear").prop('disabled', true)
+        }
+
+    });
+
+//Build HTML form for each selected kind
+function buildAppend(name) {
+    var result = '<div class="form-group row">\n' +
+        '                            <label for="input'+name+'" class="col-sm-2 col-form-label col-form-label-sm">'+name+'</label>\n' +
+        '                            <div class="col-sm-10">\n' +
+        '                                <input type="'+name+'" class="form-control form-control-sm" id="input'+name+'" placeholder="'+name+'">\n' +
+        '                            </div>\n' +
+        '                        </div>';
+    return result;
+
+}
 //Typefeld
 
 $("#click_type").click(
@@ -21,13 +50,9 @@ $("#click_type").click(
     function (e){
         e.preventDefault();
 
-        $("#add_target").append('<div class="form-group">\n' +
-            '                            <div class="input-group input-group-sm">\n' +
-            '                                <span class="input-group-addon">Type</span>\n' +
-            '                                <input type="text" class="form-control form-control-sm bfh-number" ' +
-            'id="product_price" placeholder="Journal article, in collection..." data-min="0" data-max="9999999">\n' +
-            '                            </div>\n' +
-            '                        </div>')
+        if($("#inputType" ).length == 0){
+            $("#add_target").append(buildAppend('Type'));
+        }
 
     });
 //Publisherfeld
@@ -36,14 +61,9 @@ $("#click_publisher").click(
     function (e){
         e.preventDefault();
 
-        $("#add_target").append('<div class="form-group">\n' +
-            '                            <div class="input-group input-group-sm">\n' +
-            '                                <span class="input-group-addon">Publisher</span>\n' +
-            '                                <input type="text" class="form-control form-control-sm bfh-number" ' +
-            'id="product_price" placeholder="Publisher" data-min="0" data-max="9999999">\n' +
-            '                            </div>\n' +
-            '                        </div>')
-
+        if($("#inputPublisher" ).length == 0) {
+            $("#add_target").append(buildAppend('Publisher'));
+        }
     });
 //Journalfeld
 $("#click_journal").click(
@@ -51,23 +71,18 @@ $("#click_journal").click(
     function (e){
         e.preventDefault();
 
-        $("#add_target").append('<div class="form-group">\n' +
-            '                            <div class="input-group input-group-sm">\n' +
-            '                                <span class="input-group-addon">Journal</span>\n' +
-            '                                <input type="text" class="form-control form-control-sm bfh-number" ' +
-            'id="product_price" placeholder="Journal name" data-min="0" data-max="9999999">\n' +
-            '                            </div>\n' +
-            '                        </div>')
-
+        if($("#inputJournal" ).length == 0) {
+            $("#add_target").append(buildAppend('Journal'));
+        }
     });
 
 //Journalfeld
-$("#click_timespan").click(
+$("#click_timerange").click(
 
     function (e){
         e.preventDefault();
 
-        $("#add_target").append('<div id="slider-range"></div>')
+        $("#add_target").append('<div><div id="slider-range"></div></div>');
 
     });
 

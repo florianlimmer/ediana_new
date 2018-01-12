@@ -11,14 +11,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- Other CSS -->
-    <link rel="stylesheet" type="text/css" href="general_style.css">
+    <link rel="stylesheet" type="text/css" href="css/general_style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!--JQuery-->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 </head>
 <body>
@@ -44,7 +43,7 @@
                 <a class="nav-link" href="#">Corpus</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="literature.php">Literature</a>
+                <a class="nav-link" href="literature_main.php">Literature</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="staff.php">Staff</a>

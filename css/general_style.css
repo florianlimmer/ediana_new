@@ -34,7 +34,7 @@ body{
 /*Layouting*/
 
 .jumbotron{
-  background-image: url("images/header.png");
+  background-image: url("../images/header_tile.png");
   color: #ffffff;
   min-padding: 10px;
 }
@@ -139,7 +139,7 @@ a:hover {
 
 @font-face {
   font-family: "cc";
-  src: url("images/cc-icons.ttf");
+  src: url("../images/cc-icons.ttf");
 }
 
 @font-face {
