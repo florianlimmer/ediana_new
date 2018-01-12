@@ -1,142 +1,56 @@
-<!doctype html>
-<html lang="en">
+<html>
 <head>
-    <title>EDIANA</title>
-    <link rel="icon" type="image/png" href="images/sing_gloss.png">
-
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Dialog - Default functionality</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="general_style.css">
+
+
+    <style>
+        .standardbox {
+            height: 50px;
+            width: 100%;
+            border: 1px solid black;
+            margin-bottom: 3px;
+        }
+    </style>
+
 </head>
+
+
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/sing_gloss_white.png" width="20" height="20" alt="">
-            </a>
-            <a class="navbar-brand" href="#">eDiaNa</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dictionary</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Corpus</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Literature</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Staff</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Collection</a>
-                    </li>
-                    <!-- DROPDOWN
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>-->
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="jumbotron" >
-        <!--<img src="images/sing_gloss_white.png">-->
-            <h1>eDiAna</h1>
-            <p>Digital Philological-Etymological Dictionary of the Minor Ancient Anatolian Corpus Languages</p>
-        </div>
-
-        <div class="container">
-            <h1>Impressum</h1>
-
-            <div class="row">
-                <div class="col-lg">
-                    <h3>Anschrift</h3>
-
-                    <p>Ludwig-Maximilians-Universität München<br/>
-                    Geschwister-Scholl-Platz 1<br/>
-                    80539 München<br/>
-                    <br/>
-                    Telefon: +49 (0) 89 / 2180 - 0<br/>
-                    <br/>
-                    Die Ludwig-Maximilians-Universität München ist eine Körperschaft des Öffentlichen Rechts. Sie wird durch den Präsidenten Prof. Dr. Bernd Huber gesetzlich vertreten.<br/>
-                    </p>
-
-                    <h3>Zuständige Aufsichtsbehörde</h3>
-
-                    <p>Bayerisches Staatsministerium für Bildung und Kultus, Wissenschaft und Kunst<br/>
-                    80327 München<br/></p>
-
-                    <h3>Umsatzsteuer-Identifikationsnummer der LMU</h3>
-
-                    <p>Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: DE 811205325<br/></p>
-
-                </div>
-                <div class="col-lg">
-
-                    <h3>Verantwortlich für den Inhalt</h3>
-
-                    <p>Für die angebotenen Inhalte sind die jeweiligen Einrichtungen verantwortlich.<br/></p>
-
-                    <h3>Verantwortlich für die Umsetzung</h3>
-
-                    <p>Für die technische Realisierung sind die Webmaster der Einrichtungen verantwortlich.<br/></p>
-
-                    <h3>Freistellungserklärung</h3>
-
-                    <p>Die Angaben wurden nach bestem Wissen erstellt, Fehler können jedoch nicht mit letzter Sicherheit ausgeschlossen werden. Rechtlich verbindlich sind ausschließlich die Festlegungen in den einschlägigen Rechtsgrundlagen (Gesetze, Verordnungen, Satzungen).<br/></p>
-
-                </div>
-            </div>
-        </div>
 
 
+<div class="standardbox" id="1"></div>
 
-    </div><!-- /.container -->
+<div class="standardbox" id="2"></div>
 
-    <footer class="footer">
-        <div class="container" align="center">
-            <p class="text-muted">IT-Group for the Humanities, LMU<br>
-                <small>Technical Development: Markus Frank, Katharina Smiatek<br>
-                    eDiAna is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</small>
-            </p>
-            <div class="padcon">
-                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><button type="button" class="btn btn-sm btn-outline-success" style="font-family:cc;">c b a</button></a>
-                <a href="#"><button type="button" class="btn btn-sm btn-outline-success">Impressum</button></a>
-                <a href="#"><button type="button" class="btn btn-sm btn-outline-success">Privacy Statement</button></a>
-            </div>
-        </div>
+<div class="standardbox" id="3"></div>
 
-        <div class="logos">
-            <img src="images/logo_LMU_cmyk_inv.svg" class="img-fluid" style="width:100%;" alt="Responsive image">
-            <img src="images/dfg_logo_schriftzug_schwarz.png" class="float" style="margin-top: 10px;" alt="Responsive image">
-            <img src="images/MAR_TEST.png" class="float" style="margin-top: 10px; max-height: 43px;" alt="Responsive image">
-        </div>
+<div class="standardbox" id="4"></div>
 
-    </footer>
+<div id="standardbox_input">
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</div>
+
+<button class="ui-button ui-widget ui-corner-all" id="plus">[PLUS]</button>|||<button class="ui-button ui-widget ui-corner-all" id="minus">[MINUS]</button>
+
 </body>
+
+
+
+<script>
+    $("#plus").click(
+
+        function (e){
+            e.preventDefault();
+
+            $("#standardbox_input").append('<div class="standardbox"></div>')
+
+        });
+
+</script>
+
 </html>
