@@ -1,25 +1,3 @@
-<table class="table">
-    <thead class="thead-light">
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Date</th>
-        <th scope="col">Name</th>
-        <th scope="col">Language</th>
-        <th scope="col">File</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>02/2017</td>
-        <td>Frank, Markus & Opfermann, Andreas: eDiAna. Digital Philological-Etymological Dictionary of the Minor Ancient Anatolian Corpus Languages. Current Research on Lycian. Munich.	</td>
-        <td>EN</td>
-        <td><a href="" target="_blank" ><i class="fa fa-file-pdf-o"></i></a></td>
-    </tr>
-    </tbody>
-</table>
-
-
 <?php
 
 

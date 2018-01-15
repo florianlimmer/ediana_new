@@ -37,7 +37,7 @@ function buildAppend(name) {
     var result = '<div class="form-group row">\n' +
         '                            <label for="input'+name+'" class="col-sm-2 col-form-label col-form-label-sm">'+name+'</label>\n' +
         '                            <div class="col-sm-10">\n' +
-        '                                <input type="'+name+'" class="form-control form-control-sm" id="input'+name+'" placeholder="'+name+'">\n' +
+        '                                <input type="text" class="form-control form-control-sm" id="input'+name+'" placeholder="'+name+'">\n' +
         '                            </div>\n' +
         '                        </div>';
     return result;

@@ -2,7 +2,6 @@
     session_start();
     $benutzer = $_SESSION;
     include "log.inc.php";
-
     include "navbar.php";
 ?>
 

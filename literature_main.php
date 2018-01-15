@@ -11,7 +11,7 @@ include "navbar.php";
 
             <div class="form-group row">
                 <div class="col-9">
-                    <input class="form-control form-control" type="text" placeholder="Quick search">
+                    <input class="form-control" type="text" id="quickSearch" placeholder="Quick search">
                 </div>
                 <div class="col-3">
                     <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -33,19 +33,19 @@ include "navbar.php";
                         <div class="form-group row">
                             <label for="inputTitle" class="col-sm-2 col-form-label col-form-label-sm">Title</label>
                             <div class="col-sm-10">
-                                <input type="title" class="form-control form-control-sm" id="inputTitle" placeholder="Title">
+                                <input type="text" class="form-control form-control-sm" id="inputTitle" placeholder="Title">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputAuthor" class="col-sm-2 col-form-label col-form-label-sm">Author</label>
                             <div class="col-sm-10">
-                                <input type="author" class="form-control form-control-sm" id="inputAuthor" placeholder="Author">
+                                <input type="text" class="form-control form-control-sm" id="inputAuthor" placeholder="Author">
                             </div>
                         </div>
                         <div class="form-group row"><!--Special Feature Range Slider-->
                             <label for="inputYear" class="col-sm-2 col-form-label col-form-label-sm">Year</label>
                             <div class="col-sm-8">
-                                <input type="year" class="form-control form-control-sm" id="inputYear" placeholder="Year">
+                                <input type="text" class="form-control form-control-sm" id="inputYear" placeholder="Year">
                             </div>
                             <button class="btn btn-secondary btn-sm"  type="button"
                                     data-toggle="collapse" href="#rangeSlider" role="button" aria-expanded="false"
@@ -78,7 +78,7 @@ include "navbar.php";
                         <div class="btn-group">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="button_add">
-                                + Add
+                                + more options
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" id="click_type">Type</a>
@@ -95,10 +95,11 @@ include "navbar.php";
         </div><!--/End Container-->
     </div>
 
-<?php include "begincontent.php";?>
+<?php include "begincontent.php";?><!--Beginnt Content-Container-->
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination pagination-sm pull-right">
+
+<nav aria-label="Page navigation top">
+    <ul class="pagination pagination-sm justify-content-end">
         <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
@@ -118,11 +119,13 @@ include "navbar.php";
 </nav>
 
 <?php
-include "literature_databasequery.php";
+include "Literature/lit_search.php";
 ?>
+<div id="results"></div>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination pagination-sm pull-right">
+
+<nav aria-label="Page navigation bottom">
+    <ul class="pagination pagination-sm justify-content-end">
         <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
@@ -144,7 +147,7 @@ include "literature_databasequery.php";
 <?php
 include "footer.php";
 ?>
+<script src="Literature/js/literature_functions.js"></script>
 
-<!-- Optional JavaScript -->
-<script src="js/literature_functions.js"></script>
+
 
