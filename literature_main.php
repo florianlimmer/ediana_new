@@ -10,9 +10,15 @@ include "navbar.php";
 
 
             <div class="form-group row">
-                <div class="col-9">
-                    <input class="form-control" type="text" id="quickSearch" placeholder="Quick search">
+                <div class="col-8">
+                    <input class="form-control" type="text" id="quickSearch" list="optionsQuickSearch" placeholder="Quick search">
+                    <datalist id="optionsQuickSearch"> <!--TODO: Breite der Options anpassen-->
+                        <option>hi</option>
+                        <option>yo</option>
+
+                    </datalist>
                 </div>
+                <button type="submit" class="btn btn-primary mb-1" id="quickSearchButton">Search</button>
                 <div class="col-3">
                     <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <label for="colFormLabelSm" class="col-sm col-form-label col-form-label">
@@ -95,7 +101,8 @@ include "navbar.php";
         </div><!--/End Container-->
     </div>
 
-<?php include "begincontent.php";?><!--Beginnt Content-Container-->
+<?php include "begincontent.php"; //Beginnt Content-Container
+?>
 
 
 <nav aria-label="Page navigation top">
@@ -111,43 +118,22 @@ include "navbar.php";
         <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item">
             <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
+ <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
             </a>
         </li>
     </ul>
 </nav>
 
-<?php
-include "Literature/lit_search.php";
-?>
 <div id="results"></div>
 
 
-<nav aria-label="Page navigation bottom">
-    <ul class="pagination pagination-sm justify-content-end">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-</nav>
 
 <?php
 include "footer.php";
 ?>
 <script src="Literature/js/literature_functions.js"></script>
+<script src="Literature/js/lit_query.js"></script>
 
 
 

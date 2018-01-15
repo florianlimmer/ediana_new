@@ -1,29 +1,53 @@
-
-
-
-$("#quick").on( 'keyup change',
+$("#quickSearch").on( 'keyup change',
 
 
 	function(e){
+
+
 	
 	e.preventDefault();
 
-	lit_author = $("#lit_author").val();
-
-
+	input = $("#quickSearch").val();
 
 	$.ajax({
-		
+
 					type: "POST",
-					url: "../lit_search.php",
-					data: "author=" + lit_author,
+					url: "Literature/lit_suggestions.php",
+					data: "input=" + input,
 					success: function(output)
-					
+
 						{
-						$("#results").html(output);
+						$("#optionsQuickSearch").html(output);
 						}
-		
+
 		})
 
 
 });
+
+$("#quickSearchButton").click(
+
+
+    function(e){
+
+
+
+        e.preventDefault();
+
+        searchInput = $("#quickSearch").val();
+
+        $.ajax({
+
+            type: "POST",
+            url: "Literature/lit_quickSearchQuery.php",
+            data: "input=" + searchInput,
+            success: function(output)
+
+            {
+                $("#results").html(output);
+            }
+
+        })
+
+
+    });
