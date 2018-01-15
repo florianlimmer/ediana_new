@@ -13,8 +13,6 @@ include "navbar.php";
                 <div class="col-8">
                     <input class="form-control" type="text" id="quickSearch" list="optionsQuickSearch" placeholder="Quick search">
                     <datalist id="optionsQuickSearch"> <!--TODO: Breite der Options anpassen-->
-                        <option>hi</option>
-                        <option>yo</option>
 
                     </datalist>
                 </div>
