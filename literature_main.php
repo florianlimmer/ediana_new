@@ -94,7 +94,7 @@ include "navbar.php";
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-primary btn-sm">Search</button><!--Search Button-->
+                    <button type="submit" class="btn btn-primary btn-sm" id="searchButton">Search</button><!--Search Button-->
 
                 </div><!--card-body-->
             </div><!--/End Collapse-->
@@ -133,7 +133,7 @@ include "navbar.php";
 include "footer.php";
 ?>
 <script src="Literature/js/literature_functions.js"></script>
-<script src="Literature/js/lit_query.js"></script>
+<script src="Literature/js/quicksearch_functions.js"></script>
 
 
 

@@ -8,6 +8,9 @@ $("#lit_author, #lit_year, #lit_title, #lit_J_V, #lit_sigle, #lit_limit").on( 'k
         lit_author = $("#lit_author").val();
         lit_year = $("#lit_year").val();
         lit_title = $("#lit_title").val();
+        if($("#inputPublisher" ).length == 0) {
+
+        }
         lit_J_V = $("#lit_J_V").val();
         lit_sigle = $("#lit_sigle").val();
         lit_limit = $("#lit_limit").val();

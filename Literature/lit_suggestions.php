@@ -1,6 +1,6 @@
 <?php
 include"../log.inc.php";
-//include "ref_function.inc.php";
+//include "buildBibCard.php";
 
 $input = $_POST["input"];
 

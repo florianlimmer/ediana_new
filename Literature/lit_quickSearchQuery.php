@@ -1,6 +1,6 @@
 <?php
 include"../log.inc.php";
-include "ref_function.inc.php";
+include "buildBibCard.php";
 
 $input = $_POST["input"];
 
@@ -21,6 +21,8 @@ if(strlen($input) >= 3)
         $output = SQL_reference_output ($order["ref_wpid"]);
 
         echo $output;
+
+        //TODO Not found alternative nachricht ausgeben
     }
 
     //echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";

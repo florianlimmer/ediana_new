@@ -50,7 +50,7 @@ $("#click_type").click(
     function (e){
         e.preventDefault();
 
-        if($("#inputType" ).length == 0){
+        if($("#selectType" ).length == 0){
             $.ajax({
 
                 type: "POST",
@@ -66,6 +66,7 @@ $("#click_type").click(
         }
 
     });
+
 //Publisherfeld
 $("#click_publisher").click(
 
