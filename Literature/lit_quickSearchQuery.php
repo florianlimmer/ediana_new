@@ -25,6 +25,10 @@ if(strlen($input) >= 3)
         //TODO Not found alternative nachricht ausgeben
     }
 
+    if ($ref_order) {
+        echo "<span class=\"text-muted\"> No results found. </span>";
+    }
+
     //echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";
 }
 

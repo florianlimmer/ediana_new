@@ -27,9 +27,11 @@ LIMIT 25
 
         $output = SQL_reference_output ($order["ref_wpid"]);
 
-
-
         echo $output;
+    }
+
+    if ($ref_order) {
+        echo "<span class=\"text-muted\"> No results found. </span>";
     }
 
     //echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";
