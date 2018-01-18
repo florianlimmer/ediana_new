@@ -51,7 +51,18 @@ $("#click_type").click(
         e.preventDefault();
 
         if($("#inputType" ).length == 0){
-            $("#add_target").append(buildAppend('Type'));
+            $.ajax({
+
+                type: "POST",
+                url: "Literature/lit_getTypes.php",
+                success: function(output)
+
+                {
+                    $("#add_target").append(output);
+                }
+
+            })
+
         }
 
     });

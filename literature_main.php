@@ -28,8 +28,8 @@ include "navbar.php";
             </div>
 
 
-                <!--Collapse  -->
-            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
+                <!--Collapse class="collapse" id="collapseExample" -->
+            <div  style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
@@ -72,6 +72,8 @@ include "navbar.php";
                     <!-- Space where more can be added into-->
                     <hr>
                     <div id="add_target">
+                        <form class="form-inline well" >
+                        </form>
 
                     </div>
 
