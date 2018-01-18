@@ -72,6 +72,7 @@ $("#searchButton").click(
             journal = $("#inputJournal").val();
         }
 
+
         $.ajax({
 
             type: "POST",

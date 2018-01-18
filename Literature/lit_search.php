@@ -16,11 +16,13 @@ SELECT ref_center.ref_wpid FROM `ref_authors` JOIN `ref_center` ON 			ref_author
 WHERE ref_authors.ref_secondname LIKE '%" . $author . "%'
 AND ref_center.ref_year LIKE '%" . $year . "%'
 AND ref_center.ref_title LIKE '%" . $title . "%'
+AND ref_center.ref_type LIKE '%" . $type . "%'
 GROUP BY ref_center.ref_wpid
 LIMIT 25
 
 ");
 
+    echo $journal;
 
     while ($order = mysqli_fetch_assoc($ref_order))
     {

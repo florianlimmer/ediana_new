@@ -21,8 +21,6 @@ if(strlen($input) >= 3)
         $output = SQL_reference_output ($order["ref_wpid"]);
 
         echo $output;
-
-        //TODO Not found alternative nachricht ausgeben
     }
 
     if ($ref_order) {
