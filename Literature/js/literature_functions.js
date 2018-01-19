@@ -33,17 +33,20 @@ $("#button_range").click(
     });
 
 //Disable QuickSearch when advanced search activated
-$("#button_range").click(
+$("#advancedSearchLink").click(
 
     function (e){
         e.preventDefault();
 
         if($(this).hasClass('active')){
             $(this).removeClass('active');
-            $("#inputYear").prop('disabled', false)
+            $("#quickSearch").prop('disabled', false)
+            $("#quickSearchButton").prop('disabled', false)
         } else {
             $(this).addClass('active');
-            $("#inputYear").prop('disabled', true)
+            $("#quickSearch").prop('disabled', true)
+            $("#quickSearchButton").prop('disabled', true)
+            $("#quickSearch").val('');
         }
 
     });

@@ -20,7 +20,7 @@ include "navbar.php";
                     <button type="submit" class="btn btn-primary form-control" id="quickSearchButton">Search</button>
                 </div>
                 <div class="col-lg-3">
-                    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <a data-toggle="collapse" id="advancedSearchLink" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <label for="colFormLabelSm" class="col-sm col-form-label col-form-label">
                             <i class="fa fa-search" aria-hidden="true"></i>
                             advanced search
@@ -30,8 +30,8 @@ include "navbar.php";
             </div>
 
 
-                <!--Collapse class="collapse" id="collapseExample" -->
-            <div  style="margin-top: 1rem; margin-bottom: 1rem;">
+                <!--Collapse  -->
+            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
