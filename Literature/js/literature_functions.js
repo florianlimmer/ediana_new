@@ -32,6 +32,22 @@ $("#button_range").click(
 
     });
 
+//Disable QuickSearch when advanced search activated
+$("#button_range").click(
+
+    function (e){
+        e.preventDefault();
+
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $("#inputYear").prop('disabled', false)
+        } else {
+            $(this).addClass('active');
+            $("#inputYear").prop('disabled', true)
+        }
+
+    });
+
 //Build HTML form for each selected kind
 function buildAppend(name) {
     var result = '<div class="form-group row">\n' +

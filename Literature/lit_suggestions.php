@@ -15,8 +15,8 @@ SELECT ref_secondname AS output, GROUP_CONCAT(ref_wpid SEPARATOR ',') AS wp_id, 
 WHERE ref_secondname LIKE '%" . $input . "%'
 GROUP BY ref_secondname
 UNION
-SELECT ref_title AS output, GROUP_CONCAT(ref_wpid SEPARATOR ',') AS wp_id, 'search_title' AS search_type FROM `ref_center`
-WHERE ref_title LIKE '%" . $input . "%' 
+SELECT ref_title_simplex AS output, GROUP_CONCAT(ref_wpid SEPARATOR ',') AS wp_id, 'search_title' AS search_type FROM `ref_center`
+WHERE ref_title_simplex LIKE '%" . $input . "%' 
 GROUP BY ref_title
 
 LIMIT 25"
@@ -27,7 +27,7 @@ LIMIT 25"
     while ($order = mysqli_fetch_assoc($ref_order)) {
 
 
-    		echo "<option data-wpid=\"" .$order["wp_id"] . "\" value='" .$order ["output"]." '>"; //TODO find a way to export the wpid
+    		echo "<option value='" .$order ["output"]." '>"; //TODO find a way to export the wpid
 
 
         if ($order ["search_type"] == "search_author"){

@@ -15,7 +15,7 @@ $publisher = $_POST["publisher"];
 SELECT ref_center.ref_wpid FROM `ref_authors` JOIN `ref_center` ON 			ref_authors.ref_wpid = ref_center.ref_wpid
 WHERE ref_authors.ref_secondname LIKE '%" . $author . "%'
 AND ref_center.ref_year LIKE '%" . $year . "%'
-AND ref_center.ref_title LIKE '%" . $title . "%'
+AND ref_center.ref_title_simplex LIKE '%" . $title . "%'
 GROUP BY ref_center.ref_wpid
 LIMIT 25
 
