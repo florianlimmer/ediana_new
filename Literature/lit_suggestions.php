@@ -10,18 +10,25 @@ if(strlen($input) >= 3)
 {
 $ref_order = mysqli_query($con, "
 
-SELECT DISTINCT ref_secondname AS output, 'search_author' AS search_type FROM `ref_authors`
+
+SELECT ref_secondname AS output, GROUP_CONCAT(ref_wpid SEPARATOR ',') AS wp_id, 'search_author' AS search_type FROM `ref_authors`
 WHERE ref_secondname LIKE '%" . $input . "%'
+GROUP BY ref_secondname
 UNION
-SELECT DISTINCT ref_title AS output, 'search_title' AS search_type FROM `ref_center`
-WHERE ref_title LIKE '%" . $input . "%' LIMIT 25"
+SELECT ref_title AS output, GROUP_CONCAT(ref_wpid SEPARATOR ',') AS wp_id, 'search_title' AS search_type FROM `ref_center`
+WHERE ref_title LIKE '%" . $input . "%' 
+GROUP BY ref_title
+
+LIMIT 25"
+
+
 
 );
     while ($order = mysqli_fetch_assoc($ref_order)) {
 
-    		echo "<option value='";
-    		echo $order ["output"];
-    		echo "'>";
+
+    		echo "<option data-wpid=\"" .$order["wp_id"] . "\" value='" .$order ["output"]." '>"; //TODO find a way to export the wpid
+
 
         if ($order ["search_type"] == "search_author"){
             echo "(Autorennachname) </option>";
@@ -35,6 +42,13 @@ WHERE ref_title LIKE '%" . $input . "%' LIMIT 25"
     //echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";
 
 //echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";
+
+    //SELECT DISTINCT ref_secondname AS output, 'search_author' AS search_type FROM `ref_authors`
+    //WHERE ref_secondname LIKE '%" . $input . "%'
+    //UNION
+    //SELECT DISTINCT ref_title AS output, 'search_title' AS search_type FROM `ref_center`
+    //WHERE ref_title LIKE '%" . $input . "%' LIMIT 25"
 }
 
 ?>
+

@@ -10,19 +10,21 @@ include "navbar.php";
 
 
             <div class="form-group row">
-                <div class="col-8">
-                    <input class="form-control" type="text" id="quickSearch" list="optionsQuickSearch" placeholder="Quick search">
+                <div class="col-lg-7">
+                    <input class="form-control" style="margin-bottom: 1rem;" type="text" id="quickSearch" list="optionsQuickSearch" placeholder="Quick search">
                     <datalist id="optionsQuickSearch"> <!--TODO: Breite der Options anpassen-->
 
                     </datalist>
                 </div>
-                <button type="submit" class="btn btn-primary mb-1" id="quickSearchButton">Search</button>
-                <div class="col-3">
+                <div class="col-lg-2">
+                    <button type="submit" class="btn btn-primary form-control" id="quickSearchButton">Search</button>
+                </div>
+                <div class="col-lg-3">
                     <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <label for="colFormLabelSm" class="col-sm col-form-label col-form-label">
                             <i class="fa fa-search" aria-hidden="true"></i>
                             advanced search
-                        </label>
+                        </label> <!--TODO Quicksearch ausgrauen, wenn erweiterte Suche angefordert wird-->
                     </a>
                 </div>
             </div>
@@ -49,13 +51,15 @@ include "navbar.php";
                         <div class="form-group row"><!--Special Feature Range Slider-->
                             <label for="inputYear" class="col-sm-2 col-form-label col-form-label-sm">Year</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control form-control-sm" id="inputYear" placeholder="Year">
+                                <input type="text" style="margin-bottom: 1rem;" class="form-control form-control-sm" id="inputYear" placeholder="Year">
                             </div>
-                            <button class="btn btn-secondary btn-sm"  type="button"
-                                    data-toggle="collapse" href="#rangeSlider" role="button" aria-expanded="false"
-                                    aria-controls="collapseRangeSlider" id="button_range">
-                                <i class="fa fa-sliders" aria-hidden="true"></i> Time Range
-                            </button>
+                            <div class="col-lg-2">
+                                <button class="btn btn-secondary btn-sm form-control form-control-sm"  type="button"
+                                        data-toggle="collapse" href="#rangeSlider" role="button" aria-expanded="false"
+                                        aria-controls="collapseRangeSlider" id="button_range">
+                                    <i class="fa fa-sliders" aria-hidden="true"></i> Time Range
+                                </button>
+                            </div>
                         </div>
                     </form>
                     <!--Range Slider Collapse -->

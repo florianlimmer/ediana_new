@@ -9,6 +9,9 @@ $("#quickSearch").on('keyup change',
 
 	input = $("#quickSearch").val();
 
+
+	//TODO bei option data-tags vergeben, in denen die ID der Option gespeichert wird, um dann nach der ID Suchen zu können
+
 	$.ajax({
 
 					type: "POST",
