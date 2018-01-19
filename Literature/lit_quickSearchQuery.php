@@ -23,7 +23,7 @@ if(strlen($input) >= 3)
         echo $output;
     }
 
-    if ($ref_order) {
+    if (mysqli_num_rows($ref_order)==0) {
         echo "<span class=\"text-muted\"> No results found. </span>";
     }
 

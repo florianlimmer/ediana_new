@@ -27,7 +27,7 @@ LIMIT 25"
     while ($order = mysqli_fetch_assoc($ref_order)) {
 
 
-    		echo "<option value='" .$order ["output"]." '>"; //TODO find a way to export the wpid
+    		echo "<option value='".$order ["output"]."'>"; //TODO find a way to export the wpid
 
 
         if ($order ["search_type"] == "search_author"){
