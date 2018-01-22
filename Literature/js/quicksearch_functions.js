@@ -9,9 +9,6 @@ $("#quickSearch").on('keyup change',
 
 	input = $("#quickSearch").val();
 
-
-	//TODO bei option data-tags vergeben, in denen die ID der Option gespeichert wird, um dann nach der ID Suchen zu können
-
 	$.ajax({
 
 					type: "POST",
@@ -65,34 +62,63 @@ $("#searchButton").click(
         title = $("#inputTitle").val();
         year = $("#inputYear").val();
 
-        if($("#selectType" ).length == 0) {
+        if($("#selectType" ).length != 0) {
             type = $("#selectType").val();
+        } else {
+            type = 0; //workaround... sonst ist type undefiniert und kann nicht übergeben werden
         }
-        if($("#inputPublisher" ).length == 0) {
+        if($("#inputPublisher" ).length != 0) {
             publisher = $("#inputPublisher").val();
         }
-        if($("#inputJournal" ).length == 0) {
+        else {
+            publisher = 0; //workaround...
+        }
+        if($("#inputJournal" ).length != 0) {
             journal = $("#inputJournal").val();
+        }
+        else {
+            journal = 0; //workaround...
         }
 
 
-        $.ajax({
+            $.ajax({
 
-            type: "POST",
-            url: "Literature/lit_search.php",
-            data: "author=" + author
-            + "&year=" + year
-            + "&title=" + title
-            + "&journal=" + journal
-            + "&type=" + type
-            + "&publisher=" + publisher,
-            success: function(output)
+                type: "POST",
+                url: "Literature/lit_search.php",
+                data: "author=" + author
+                + "&year=" + year
+                + "&title=" + title
+                + "&journal=" + journal
+                + "&publisher=" + publisher
+                + "&type=" + type,
+                success: function (output) {
+                    $("#results").html(output);
+                }
 
-            {
-                $("#results").html(output);
-            }
+            })
 
-        })
+
+
+
+        //else {
+
+          //  $.ajax({
+//
+  //              type: "POST",
+    //            url: "Literature/lit_search.php",
+      //          data: "author=" + author
+        //        + "&year=" + year
+          //      + "&title=" + title
+            //    + "&journal=" + journal
+              //  + "&type=" + type
+                //+ "&publisher=" + publisher,
+         //       success: function (output) {
+           //         $("#results").html(output);
+             //   }
+
+           // })
+
+      //  }
 
 
     });

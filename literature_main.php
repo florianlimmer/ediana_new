@@ -24,14 +24,14 @@ include "navbar.php";
                         <label for="colFormLabelSm" class="col-sm col-form-label col-form-label">
                             <i class="fa fa-search" aria-hidden="true"></i>
                             advanced search
-                        </label> <!--TODO Quicksearch ausgrauen, wenn erweiterte Suche angefordert wird-->
+                        </label>
                     </a>
                 </div>
             </div>
 
 
-                <!--Collapse  -->
-            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
+                <!--Collapse class="collapse" id="collapseExample" -->
+            <div  style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
