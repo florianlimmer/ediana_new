@@ -1,7 +1,7 @@
 <?php
 //Diese Funktion holt Reference-Information aus der Datenbank und schreibt sie in die EDIANA-Datenbank
 
-function SQL_reference_output ($ID)
+function SQL_reference_output ($ID, $counter)
 {
 //Einbindung Login
 
@@ -170,17 +170,28 @@ $online_text = "<div class='card' style='margin-bottom: 1rem;'> "; //href gegebe
 						
 						
 $online_text .= "</div>
-<div class=\"card-footer text-muted \">
+	<div class=\"card-footer text-muted \">
     <ul class=\"nav nav-pills card-header-pills pull-right\">
       <li class=\"nav-item\">
-        <a href=\"\" class=\"nav-link\" target=\"_blank\" ><i class=\"fa fa-info-circle\"></i> Additional Information</a>
+        <a href=\"\" class=\"nav-link\" data-toggle=\"collapse\" data-parent=\"#results\" href=\"#exampleAccordion' . $counter
+        . '\" 
+        role=\"button\" aria-expanded=\"false\" aria-controls=\"exampleAccordion' . $counter . '\"><i class=\"fa fa-info-circle\"></i> Additional Information</a>
       </li>
       <li class=\"nav-item\">
         <a href=\"\" class=\"nav-link nav-link disabled\" target=\"_blank\" ><i class=\"fa fa-arrow-circle-right\"></i> Full Bibliography Entry</a>
       </li>
     </ul>
+    <div id=\"exampleAccordion' . $counter. '\" class=\"collapse\" role=\"tabpanel\">
+      <p class=\"mb-3\">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.
+      </p>
+    </div>
   </div>
-</div>";
+  
+  
+</div><!-- Card Ende-->
+
+";
 						
 						$deletion_1 = array(". .", " :", " </span>,", "?</span>.", "<b>", "</b>", " </span>.", " .", "<br />");
 						$deletion_2 = array(".", ":", "</span>,", "?</span>", "", "", "</span>.",  ".", "");

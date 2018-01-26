@@ -14,13 +14,14 @@ if(strlen($input) >= 3)
         GROUP BY ref_center.ref_wpid "
     );
 
-
+    $i = 0;
     while ($order = mysqli_fetch_assoc($ref_order))
     {
 
-        $output = SQL_reference_output ($order["ref_wpid"]);
+        $output = SQL_reference_output ($order["ref_wpid"], $i);
 
         echo $output;
+        $i++;
     }
 
     if (mysqli_num_rows($ref_order)==0) {

@@ -37,13 +37,14 @@ LIMIT 25
 
 ");
 
-
+$i = 0;
 while ($order = mysqli_fetch_assoc($ref_order))
 {
 
-    $output = SQL_reference_output ($order["ref_wpid"]);
+    $output = SQL_reference_output ($order["ref_wpid"], $i);
 
     echo $output;
+    $i++;
 }
 
 if (mysqli_num_rows($ref_order)==0) {

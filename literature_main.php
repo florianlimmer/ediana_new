@@ -12,6 +12,7 @@ include "navbar.php";
             <div class="form-group row">
                 <div class="col-lg-7">
                     <input class="form-control" style="margin-bottom: 1rem;" type="text" id="quickSearch" list="optionsQuickSearch" placeholder="Quick search">
+                    <!--TODO 1rem margin nur beim small Bildschirmen-->
                     <datalist id="optionsQuickSearch"> <!--TODO: Breite der Options anpassen-->
 
                     </datalist>
@@ -30,8 +31,8 @@ include "navbar.php";
             </div>
 
 
-                <!--Collapse class="collapse" id="collapseExample" -->
-            <div  style="margin-top: 1rem; margin-bottom: 1rem;">
+                <!--Collapse -->
+            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
@@ -129,7 +130,9 @@ include "navbar.php";
     </ul>
 </nav>
 
-<div id="results"></div>
+<div id="results" data-children=".card-footer">
+
+</div>
 
 
 
