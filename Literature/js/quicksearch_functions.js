@@ -98,29 +98,6 @@ $("#searchButton").click(
             })
 
 
-
-
-        //else {
-
-          //  $.ajax({
-//
-  //              type: "POST",
-    //            url: "Literature/lit_search.php",
-      //          data: "author=" + author
-        //        + "&year=" + year
-          //      + "&title=" + title
-            //    + "&journal=" + journal
-              //  + "&type=" + type
-                //+ "&publisher=" + publisher,
-         //       success: function (output) {
-           //         $("#results").html(output);
-             //   }
-
-           // })
-
-      //  }
-
-
     });
 
 

@@ -167,25 +167,28 @@ $online_text = "<div class='card' style='margin-bottom: 1rem;'> "; //href gegebe
 						
 						if ($center_2["ref_pages"] != "") {$online_text .= "" . $center_2["ref_pages"] . ". ";}
 						
+$number = (string) $counter;
 						
-						
-$online_text .= "</div>
+$online_text .= "
+    <div id='exampleAccordion$number' class='collapse' role='tabpanel'>
+    <hr>
+      <p class='mb - 3'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.
+      </p>
+    </div>
+</div>
 	<div class=\"card-footer text-muted \">
     <ul class=\"nav nav-pills card-header-pills pull-right\">
-      <li class=\"nav-item\">
-        <a href=\"\" class=\"nav-link\" data-toggle=\"collapse\" data-parent=\"#results\" href=\"#exampleAccordion' . $counter
-        . '\" 
-        role=\"button\" aria-expanded=\"false\" aria-controls=\"exampleAccordion' . $counter . '\"><i class=\"fa fa-info-circle\"></i> Additional Information</a>
-      </li>
+    <li class='nav-item'>
+    <a  class='nav-link' data-toggle='collapse' data-parent='#results'
+    href='#exampleAccordion$number' role='button' aria-expanded='true' aria-controls='exampleAccordion$number'>
+                            <i class=\"fa fa-info-circle\"></i> Additional Information                  </a>
+       </li>
       <li class=\"nav-item\">
         <a href=\"\" class=\"nav-link nav-link disabled\" target=\"_blank\" ><i class=\"fa fa-arrow-circle-right\"></i> Full Bibliography Entry</a>
       </li>
     </ul>
-    <div id=\"exampleAccordion' . $counter. '\" class=\"collapse\" role=\"tabpanel\">
-      <p class=\"mb-3\">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.
-      </p>
-    </div>
+
   </div>
   
   

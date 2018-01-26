@@ -3,7 +3,7 @@ session_start();
 $benutzer = $_SESSION;
 include "log.inc.php";
 include "navbar.php";
-include "Literature/lit_slider.php"
+//include "Literature/lit_slider.php"
 ?>
 
     <!--Quick search bar-->
@@ -33,8 +33,8 @@ include "Literature/lit_slider.php"
             </div>
 
 
-                <!--Collapse -->
-            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
+                <!--Collapse class="collapse" id="collapseExample"-->
+            <div  style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
@@ -132,7 +132,30 @@ include "Literature/lit_slider.php"
     </ul>
 </nav>
 
-<div id="results" data-children=".card-footer">
+<div id="results" data-children='.card-body'>
+
+   <!-- <div id="exampleAccordion" data-children=".item">
+        <div class="item">
+            <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" role="button" aria-expanded="true" aria-controls="exampleAccordion1">
+                Toggle item
+            </a>
+            <div id="exampleAccordion1" class="collapse show" role="tabpanel">
+                <p class="mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion2" role="button" aria-expanded="false" aria-controls="exampleAccordion2">
+                Toggle item 2
+            </a>
+            <div id="exampleAccordion2" class="collapse" role="tabpanel">
+                <p class="mb-3">
+                    Donec at ipsum dignissim, rutrum turpis scelerisque, tristique lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus nec dui turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+            </div>
+        </div>
+    </div> -->
 
 </div>
 
