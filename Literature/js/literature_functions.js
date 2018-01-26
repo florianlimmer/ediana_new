@@ -2,18 +2,25 @@
 //Slider Script
 
 $( function() {
+
+    min_val = $("#time_span").data("min");
+    max_val = $("#time_span").data("max");
+    mid_val = ((min_val+max_val)/2);
     $( "#slider-range" ).slider({
         range: true,
-        min: 1950,
-        max: 2018,
-        values: [ 1980, 2000 ],
+        min: min_val,
+        max: max_val,
+        values: [mid_val-10, mid_val+10 ],
         slide: function( event, ui ) {
             $( "#amount" ).val( "from " + ui.values[ 0 ] + " to " + ui.values[ 1 ] );
         }
     });
     $( "#amount" ).val( "from " + $( "#slider-range" ).slider( "values", 0 ) +
         " to " + $( "#slider-range" ).slider( "values", 1 ) );
+
+    var values = $( ".selector" ).slider( "values" );
 } );
+
 
 
 //Disable Year when Slider Acitvated
