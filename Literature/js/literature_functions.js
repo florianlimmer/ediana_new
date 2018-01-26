@@ -18,7 +18,7 @@ $( function() {
     $( "#amount" ).val( "from " + $( "#slider-range" ).slider( "values", 0 ) +
         " to " + $( "#slider-range" ).slider( "values", 1 ) );
 
-    var values = $( ".selector" ).slider( "values" );
+
 } );
 
 

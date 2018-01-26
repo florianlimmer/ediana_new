@@ -99,28 +99,33 @@ $("#searchButton").click(
 
 
 
-
-        //else {
-
-          //  $.ajax({
-//
-  //              type: "POST",
-    //            url: "Literature/lit_search.php",
-      //          data: "author=" + author
-        //        + "&year=" + year
-          //      + "&title=" + title
-            //    + "&journal=" + journal
-              //  + "&type=" + type
-                //+ "&publisher=" + publisher,
-         //       success: function (output) {
-           //         $("#results").html(output);
-             //   }
-
-           // })
-
-      //  }
-
-
     });
 
 
+
+$("#test").click(
+
+
+    function(e){
+
+        e.preventDefault();
+
+        min_year = $( "#slider-range" ).slider( "values", 0 );
+        max_year = $( "#slider-range" ).slider( "values", 1 );
+
+        $.ajax({
+
+            type: "POST",
+            url: "Literature/slider.php",
+            data: "min_year=" + min_year
+            +"&max_year=" + max_year,
+            success: function(output)
+
+            {
+                $("#results").html(output);
+            }
+
+        })
+
+
+    });
