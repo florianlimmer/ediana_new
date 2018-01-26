@@ -3,7 +3,9 @@ session_start();
 $benutzer = $_SESSION;
 include "log.inc.php";
 include "navbar.php";
+include "Literature/lit_slider.php"
 ?>
+
     <!--Quick search bar-->
     <div style="background-color: #f8f9fa; margin-top: -16px; min-height: 4rem; margin-bottom: 1rem;">
         <div class="container" style="padding-top: 1rem;">
