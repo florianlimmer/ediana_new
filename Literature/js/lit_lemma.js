@@ -1,8 +1,7 @@
 
-$(".concordance_text").click(
+$(".lemma").click(
 
 	function(){
-
 
 	lit_id = $(this).data("lit_id");
 
@@ -10,7 +9,7 @@ $(".concordance_text").click(
 	$.ajax({
 		
 					type: "POST",
-					url: "BIBLIOGRAPHY/PHP_elements/lemma_proposal.php",
+					url: "Literature/lemma_proposal.php",
 					data: "lit_id=" +  lit_id,
 					success: function(output)
 					

@@ -1,5 +1,5 @@
 <?php 
-include "log.inc.php";
+include "../log.inc.php";
 
 $ID = $_POST["lit_id"];
 
@@ -99,3 +99,4 @@ while ($lemma_id_result = mysqli_fetch_assoc($lemma_id))
 
 
 ?>
+

@@ -182,8 +182,8 @@ $online_text .= "
 	<div class=\"card-footer text-muted \">
     <ul class=\"nav nav-pills card-header-pills pull-right\">
     <li class='nav-item'>
-    <a  class='nav-link' data-toggle='collapse' data-parent='#results'
-    href='#exampleAccordion$number' role='button' aria-expanded='true' aria-controls='exampleAccordion$number'>
+    <a  class='nav-link lemma' data-toggle='collapse' data-parent='#results'
+    href='#exampleAccordion$number' role='button' aria-expanded='true' aria-controls='exampleAccordion$number'> 
                             <i class=\"fa fa-info-circle\"></i> Additional Information                  </a>
        </li>
       <li class=\"nav-item\">
@@ -223,6 +223,6 @@ $online_text .= "
 
 
 ?>
-
+<script src="Literature/js/lit_lemma.js"></script>
 
 
