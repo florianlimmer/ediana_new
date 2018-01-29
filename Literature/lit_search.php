@@ -8,6 +8,8 @@ $year = $_POST["year"];
 $type = $_POST["type"];
 $journal = $_POST["journal"];
 $publisher = $_POST["publisher"];
+$min_year = $_POST["min_year"];
+$max_year = $_POST["max_year"];
 if (!$type || $type == 'Choose...'){ //falls Type nicht erzeugt wurde oder auf default gesetzt ist
     $type = ''; //workaround...
 }
@@ -17,8 +19,16 @@ if (!$journal){
 if (!$publisher){
     $publisher = ''; //workaround...
 }
+if (!$year){
+    $year = ''; //workaround...
+}
 
-
+if (!$min_year){
+    $min_year = 0; //workaround...
+}
+if (!$max_year){
+    $max_year = 3000; //workaround...
+}
 
 
 $ref_order = mysqli_query($con, "
@@ -30,9 +40,10 @@ WHERE ref_authors.ref_secondname LIKE '%" . $author . "%'
 AND ref_companies.ref_company LIKE '%" . $publisher . "%'
 AND ref_center.ref_year LIKE '%" . $year . "%'
 AND ref_center.ref_type LIKE '%" . $type . "%'
+AND ref_year_int BETWEEN $min_year AND $max_year
 AND ref_center.ref_title_jv LIKE '%" . $journal . "%'
 AND ref_center.ref_title_simplex LIKE '%" . $title . "%'
-GROUP BY ref_center.ref_wpid
+GROUP BY ref_center.ref_year_int
 LIMIT 25
 
 ");

@@ -31,7 +31,7 @@ LIMIT 25"
 
 
         if ($order ["search_type"] == "search_author"){
-            echo "(Autorennachname)</option>";
+            echo "(Author)</option>";
         }
             else{
                 echo "</option>";

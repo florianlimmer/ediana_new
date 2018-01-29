@@ -60,7 +60,17 @@ $("#searchButton").click(
 
         author = $("#inputAuthor").val();
         title = $("#inputTitle").val();
-        year = $("#inputYear").val();
+
+        if(document.getElementById('inputYear').disabled){
+            min_year = $( "#slider-range" ).slider( "values", 0 );
+            max_year = $( "#slider-range" ).slider( "values", 1 );
+            year = 0;
+        } else {
+            year = $("#inputYear").val();
+            min_year = 0;
+            max_year = 0;
+        }
+
 
         if($("#selectType" ).length != 0) {
             type = $("#selectType").val();
@@ -81,12 +91,15 @@ $("#searchButton").click(
         }
 
 
+
             $.ajax({
 
                 type: "POST",
                 url: "Literature/lit_search.php",
                 data: "author=" + author
                 + "&year=" + year
+                + "&min_year=" + min_year
+                + "&max_year=" + max_year
                 + "&title=" + title
                 + "&journal=" + journal
                 + "&publisher=" + publisher
@@ -97,35 +110,6 @@ $("#searchButton").click(
 
             })
 
-
-
-    });
-
-
-
-$("#test").click(
-
-
-    function(e){
-
-        e.preventDefault();
-
-        min_year = $( "#slider-range" ).slider( "values", 0 );
-        max_year = $( "#slider-range" ).slider( "values", 1 );
-
-        $.ajax({
-
-            type: "POST",
-            url: "Literature/slider.php",
-            data: "min_year=" + min_year
-            +"&max_year=" + max_year,
-            success: function(output)
-
-            {
-                $("#results").html(output);
-            }
-
-        })
 
 
     });

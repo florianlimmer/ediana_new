@@ -26,6 +26,5 @@ $max_year = $_POST["max_year"];
         echo "<span class=\"text-muted\"> No results found. </span>";
     }
 
-    //echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";
 
 ?>

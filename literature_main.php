@@ -33,8 +33,9 @@ include "Literature/lit_slider.php"
             </div>
 
 
-                <!--Collapse -->class="collapse" id="collapseExample"
-            <div  style="margin-top: 1rem; margin-bottom: 1rem;">
+                <!--Collapse -->
+
+            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
@@ -73,8 +74,7 @@ include "Literature/lit_slider.php"
                         </p>
 
                         <div id="slider-range"></div>
-                        <button type="submit" class="btn btn-primary form-control" id="test">Search</button>
-                    </div>
+                         </div>
 
 
                     <!-- Space where more can be added into-->
