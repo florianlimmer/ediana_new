@@ -4,6 +4,8 @@ include "buildBibCard.php";
 
 $input = $_POST["input"];
 
+$offset = isset($_GET['offset']);
+
 if(strlen($input) >= 3)
 {
     $ref_order = mysqli_query($con, "
@@ -27,11 +29,11 @@ if(strlen($input) >= 3)
 
     }
 
-    if (mysqli_num_rows($ref_order)==0) {
+    $number = mysqli_num_rows($ref_order);
+
+    if ($number==0) {
         echo "<span class=\"text-muted\"> No results found. </span>";
     }
-
-    $number = mysqli_num_rows($ref_order);
 
     echo"
     <nav aria-label=\"Page navigation top\">
@@ -43,9 +45,9 @@ if(strlen($input) >= 3)
             </a>
         </li>";
 
-    for($i=1; $i<=$number/25; $i++){
-        echo" <li class='page-item'><a class='page-link' href=''>";
-        echo $i;
+    for($i=1; $i<=$number/15; $i++){ //TODO change start value, so that each further page is shown as $i + 1
+        echo"<li class='page-item'><a class='page-link' href='$_PHP_SELF?offset=".$i."'>";
+        echo $i+1;
         echo"</a></li>";
     }
     echo"

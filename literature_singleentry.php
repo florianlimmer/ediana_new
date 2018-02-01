@@ -5,15 +5,22 @@ include "log.inc.php";
 include "navbar.php";
 include "begincontent.php";
 
+
 ?>
 
-<h1 style="margin-top: 1rem;">Rieken, Elisabeth (2010)</h1> <!--TODO Zentrierung Karten handy-->
-<p>
-    Rieken, Elisabeth (2010): Das Zeichen <t�> im Hieroglyphen-Luwischen. In: Cohen, Yoram / Gilan, Amir / Miller, Jared L. (ed.): Pax Hethitica. Studies on the Hittites and their Neighbours in Honour of Itamar Singer. Studien zu den Bo?azk�y-Texten 51. Wiesbaden: Harrassowitz. 301-310.
-</p>
+    <h1 style="margin-top: 1rem;">Rieken, Elisabeth (2010)</h1> <!--TODO Zentrierung Karten handy-->
+    <p>
+        Rieken, Elisabeth (2010): Das Zeichen <t�> im Hieroglyphen-Luwischen. In: Cohen, Yoram / Gilan, Amir / Miller, Jared L. (ed.): Pax Hethitica. Studies on the Hittites and their Neighbours in Honour of Itamar Singer. Studien zu den Bo?azk�y-Texten 51. Wiesbaden: Harrassowitz. 301-310.
+    </p>
     <div class="alert alert-info">
         <h3 style="margin-bottom:20px; margin-top: 20px;">General Informaton</h3>
     </div>
+
+<?php
+$test = $_GET["wpid"];
+
+echo $test;
+?>
 
     <table class="table">
         <tbody>
