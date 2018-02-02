@@ -21,7 +21,7 @@ if(strlen($input) >= 3)
     $i = 0;
     while ($order = mysqli_fetch_assoc($ref_order))
     {
-            $output = SQL_reference_output ($order["ref_wpid"], $i);
+            $output = SQL_reference_output($order["ref_wpid"], $i);
 
             echo $output;
             $i++;

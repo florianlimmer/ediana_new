@@ -191,7 +191,7 @@ $online_text .= "
                             <i class=\"fa fa-info-circle\"></i> Additional Information                  </a>
        </li>
       <li class=\"nav-item\">
-        <a href='literature_singleentry.php?wpid=".$wp_id."' class=\"nav-link nav-link disabled\" target='' ><i class=\"fa fa-arrow-circle-right\"></i> Full Bibliography Entry</a>
+        <a href='Literature/literature_singleentry.php?wpid=".$wp_id."' class=\"nav-link nav-link disabled\" target='' ><i class=\"fa fa-arrow-circle-right\"></i> Full Bibliography Entry</a>
       </li>
     </ul>
 

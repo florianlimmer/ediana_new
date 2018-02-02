@@ -1,29 +1,28 @@
+
+//Quicksearch Suggestions
+
 $("#quickSearch").on('keyup change',
 
-
 	function(e){
-
-
 	
-	e.preventDefault();
+        e.preventDefault();
 
-	input = $("#quickSearch").val();
+        input = $("#quickSearch").val();
 
-	$.ajax({
+        $.ajax({
 
-					type: "POST",
-					url: "Literature/lit_suggestions.php",
-					data: "input=" + input,
-					success: function(output)
+                        type: "POST",
+                        url: "Literature/lit_suggestions.php",
+                        data: "input=" + input,
+                        success: function(output)
 
-						{
-						$("#optionsQuickSearch").html(output);
-						}
-
-		})
-
-
+                            {
+                            $("#optionsQuickSearch").html(output);
+                            }
+            })
 });
+
+
 
 // Quicksearch Suchfunktion
 
@@ -145,7 +144,6 @@ function advancedSearch(offset_value){
 
             })
         }
-
 
     };
 
