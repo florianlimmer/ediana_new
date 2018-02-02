@@ -37,12 +37,10 @@ function quickSearch(offset_value){
         url: "Literature/lit_quickSearchQuery.php",
         data: "input=" + searchInput
         + "&offset=" + offset,
-        success: function(output)
-
-        {
+        success: function(output) {
             $("#results").html(output);
-        }
 
+        }
     })
 
     $.ajax({
@@ -50,10 +48,8 @@ function quickSearch(offset_value){
         type: "POST",
         url: "Literature/lit_pagination.php",
         data: "input=" + searchInput,
-        success: function(output)
-
-        {
-            $("#results").html(output);
+        success: function(output){
+            $("#pagination").html(output);
         }
 
     })

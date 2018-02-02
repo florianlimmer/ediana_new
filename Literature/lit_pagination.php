@@ -16,7 +16,7 @@ if(strlen($input) >= 3)
     );
 
     $number = mysqli_num_rows($ref_order);
-
+    
     if ($number==0) {
         echo "";
     }
@@ -29,18 +29,17 @@ if(strlen($input) >= 3)
                     <span aria-hidden=\"true\">&laquo;</span>
                     <span class=\"sr-only\">Previous</span>
                 </a>
-            </li>
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\" >
-                   1
-                </a>
             </li>";
 
-        for ($i = 1; $i <= $number; $i+15) { //TODO change start value, so that each further page is shown as $i + 1
-            echo "<li class='page-item'><a class='page-link' href='javascript:quickSearch(15)'>";
-            echo $i + 1;
+        //build pagination buttons with functionality
+
+        for ($i = 0; $i <= $number; $i += 15) { //TODO change start value, so that each further page is shown as $i + 1
+            echo "<li class='page-item'><a class='page-link' href='javascript:quickSearch($i)'>";
+            echo (($i/15) + 1);
             echo "</a></li>";
         }
+
+
         echo "
             <li class=\"page-item\">
                 <a class=\"page-link\" href=\"#\" aria-label=\"Next\">
