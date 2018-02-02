@@ -20,7 +20,7 @@ include "Literature/lit_slider.php"
                     </datalist>
                 </div>
                 <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary form-control" id="quickSearchButton">Search</button>
+                    <button type="submit" class="btn btn-primary form-control" onclick='quickSearch(0)' id="quickSearchButton">Search</button>
                 </div>
                 <div class="col-lg-3">
                     <a data-toggle="collapse" id="advancedSearchLink" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">

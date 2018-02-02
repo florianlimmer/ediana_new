@@ -25,30 +25,41 @@ $("#quickSearch").on('keyup change',
 
 });
 
-$("#quickSearchButton").click(
+
+function quickSearch(offset_value){
+
+    searchInput = $("#quickSearch").val();
+    offset= offset_value;
+
+    $.ajax({
+
+        type: "POST",
+        url: "Literature/lit_quickSearchQuery.php",
+        data: "input=" + searchInput
+        + "&offset=" + offset,
+        success: function(output)
+
+        {
+            $("#results").html(output);
+        }
+
+    })
+
+    $.ajax({
+
+        type: "POST",
+        url: "Literature/lit_pagination.php",
+        data: "input=" + searchInput,
+        success: function(output)
+
+        {
+            $("#results").html(output);
+        }
+
+    })
 
 
-    function(e){
-
-        e.preventDefault();
-
-        searchInput = $("#quickSearch").val();
-
-        $.ajax({
-
-            type: "POST",
-            url: "Literature/lit_quickSearchQuery.php",
-            data: "input=" + searchInput,
-            success: function(output)
-
-            {
-                $("#results").html(output);
-            }
-
-        })
-
-
-    });
+}
 
 $("#searchButton").click(
 
@@ -113,3 +124,6 @@ $("#searchButton").click(
 
 
     });
+
+
+
