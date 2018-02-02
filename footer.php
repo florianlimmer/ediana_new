@@ -6,13 +6,13 @@
     <div class="container" align="center" >
         <div class="row">
             <div class="col-sm-4">
-                <a href="http://www.uni-muenchen.de/index.html" target="_blank"><img src="images/lmu_logo.png" alt="Responsive image"></a>
+                <a href="http://www.uni-muenchen.de/index.html" target="_blank"><img src="//localhost/ediana/images/lmu_logo.png" alt="Responsive image"></a>
             </div>
             <div class="col-sm-4">
-                <a href="http://www.dfg.de/" target="_blank"><img src="images/dfg_logo_schriftzug_schwarz.png" alt="Responsive image" style="margin-top:20px;"></a>
+                <a href="http://www.dfg.de/" target="_blank"><img src="//localhost/ediana/images/dfg_logo_schriftzug_schwarz.png" alt="Responsive image" style="margin-top:20px;"></a>
             </div>
             <div class="col-sm-4">
-                <a href="http://www.uni-marburg.de/de" target="_blank"><img src="images/MAR_TEST.png" width="250px" alt="Responsive image"></a>
+                <a href="http://www.uni-marburg.de/de" target="_blank"><img src="//localhost/ediana/images/MAR_TEST.png" width="250px" alt="Responsive image"></a>
             </div>
         </div>
         <hr>
@@ -26,8 +26,8 @@
             <div class="col-3">
                 <p class="text-muted foot" style="text-align: left;">
                     <b>Links</b><br><br>
-                    <a href="impressum.php">Impressum</a><br>
-                    <a href="privacy.php">Privacy Statement</a><br>
+                    <a href="//localhost/ediana/impressum.php">Impressum</a><br>
+                    <a href="//localhost/ediana/privacy.php">Privacy Statement</a><br>
                 </p>
             </div>
         </div>

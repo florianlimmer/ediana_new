@@ -4,10 +4,8 @@ session_start();
 $benutzer = $_SESSION;
 include "../log.inc.php";
 include "../navbar.php"; //TODO Alle Links tot!
-?>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
-<?php
 include "../begincontent.php";
+include "lit_getExcerpts.php";
 
 include "buildLitEntry.php"; // Funktion zur Literaturkonversion
 
@@ -19,7 +17,7 @@ $ID = $_GET["wpid"];
 <?php }
 else {*/ ?>
 
-<div style="margin-top: 80px;"></div>
+<div style=""></div>
 
 <!--<div class="upper_menu_int">
     <ul class="ul_upper">
@@ -43,7 +41,9 @@ else {*/ ?>
         $ref_code = mysqli_fetch_assoc($ref_order);
 
 
-        echo "<h1 style='margin-bottom: 1rem;'>" . $ref_code["ref_sigle"]."</h1>";
+        echo "                
+                    <h3 style=\"margin-top: 0.5rem;\" class=\"display-4\" >
+               " . $ref_code["ref_sigle"]."</h3>";
 
         //Lit Entry Bibliography Style
         $output = SQL_reference_output($ID);
@@ -58,13 +58,14 @@ else {*/ ?>
         <div class="lit_output_3" id="1">
             <div onclick="literature_plus_expand_add()" style="cursor: pointer;">
                 <div class="alert alert-info">
-                    <h3 style="margin-bottom:20px; margin-top: 20px;">Additional Information</h3></div>
+                    <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Additional Information</h3>
+                </div>
             <div>
-                <table class = "add_info_table">
+                <table class = "table">
 
-                    <tr class = "ait_tr"><td class = "ait_td">Sigle</td><td class = "ait_td"><?php echo $ref_center_array["ref_sigle"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Year</td><td class = "ait_td"><?php echo $ref_center_array["ref_year"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Number Authors</td><td class = "ait_td"><?php echo $ref_center_array["ref_authors"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Sigle</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_sigle"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Year</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_year"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Authors</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_authors"]; ?></td></tr>
 
                     <?php // Authorenschleife
 
@@ -77,14 +78,14 @@ else {*/ ?>
 
                         $i++;
 
-                        echo "<tr class = 'ait_tr'><td class = 'ait_td'>Author [" . $i . "]</td><td class = 'ait_td'>" . $author["ref_firstname"] . " " . $author["ref_secondname"] ."</td></tr>";
+                        echo "<tr class = 'ait_tr'><td class = 'ait_td'><b>Author [" . $i . "]</b></td><td class = 'ait_td'>" . $author["ref_firstname"] . " " . $author["ref_secondname"] ."</td></tr>";
 
                     }
 
                     ?>
 
 
-                    <tr class = "ait_tr"><td class = "ait_td">Number Editors</td><td class = "ait_td"><?php echo $ref_center_array["ref_editors"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Editors</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_editors"]; ?></td></tr>
 
                     <?php // Editorenschleife
 
@@ -97,7 +98,7 @@ else {*/ ?>
 
                         $i++;
 
-                        echo "<tr class = 'ait_tr'><td class = 'ait_td'>Editor [" . $i . "]</td><td class = 'ait_td'>" . $editors["ref_firstname"] . " " . $editors["ref_secondname"] ."</td></tr>";
+                        echo "<tr class = 'ait_tr'><td class = 'ait_td'><b>Editor [" . $i . "]</b></td><td class = 'ait_td'>" . $editors["ref_firstname"] . " " . $editors["ref_secondname"] ."</td></tr>";
 
                     }
 
@@ -106,13 +107,13 @@ else {*/ ?>
 
 
 
-                    <tr class = "ait_tr"><td class = "ait_td">Publication Type</td><td class = "ait_td"><?php echo $ref_center_array["ref_type"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Title</td><td class = "ait_td"><b><?php echo $ref_center_array["ref_title"]; ?></b></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Subtitle</td><td class = "ait_td"><?php echo $ref_center_array["ref_subtitle"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Series</td><td class = "ait_td"><?php echo $ref_center_array["ref_series"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Title Journal / Volume</td><td class = "ait_td"><?php echo $ref_center_array["ref_title_jv"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Title Shortcut</td><td class = "ait_td"><?php echo $ref_center_array["ref_shortcut_jv"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Number Publishing Locations</td><td class = "ait_td"><?php echo $ref_center_array["ref_locations"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Publication Type</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_type"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Title</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_title"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Subtitle</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_subtitle"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Series</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_series"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Title Journal / Volume</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_title_jv"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Title Shortcut</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_shortcut_jv"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Publishing Locations</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_locations"]; ?></td></tr>
 
                     <?php // Ortsschleife
 
@@ -125,14 +126,14 @@ else {*/ ?>
 
                         $i++;
 
-                        echo "<tr class = 'ait_tr'><td class = 'ait_td'>Location [" . $i . "]</td><td class = 'ait_td'>" . $loc["ref_location"] ."</td></tr>";
+                        echo "<tr class = 'ait_tr'><td class = 'ait_td'><b>Location [" . $i . "]</b></td><td class = 'ait_td'>" . $loc["ref_location"] ."</td></tr>";
 
                     }
 
                     ?>
 
 
-                    <tr class = "ait_tr"><td class = "ait_td">Number Publishing Companies</td><td class = "ait_td"><?php echo $ref_center_array["ref_companies"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Publishing Companies</td><td class = "ait_td"><?php echo $ref_center_array["ref_companies"]; ?></td></tr>
 
                     <?php // Verlagsschleife
 
@@ -145,305 +146,53 @@ else {*/ ?>
 
                         $i++;
 
-                        echo "<tr class = 'ait_tr'><td class = 'ait_td'>Company [" . $i . "]</td><td class = 'ait_td'>" . $companies["ref_company"] ."</td></tr>";
+                        echo "<tr class = 'ait_tr'><td class = 'ait_td'><b>Company [" . $i . "]</b></td><td class = 'ait_td'>" . $companies["ref_company"] ."</td></tr>";
 
                     }
 
                     ?>
 
-                    <tr class = "ait_tr"><td class = "ait_td">URL</td><td class = "ait_td"><?php echo $ref_center_array["ref_url"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">URL Addendum</td><td class = "ait_td"><?php echo $ref_center_array["ref_url_add"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Number / Edition</td><td class = "ait_td"><?php echo $ref_center_array["ref_number"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td">Pages</td><td class = "ait_td"><?php echo $ref_center_array["ref_pages"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>URL</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_url"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>URL Addendum</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_url_add"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Number / Edition</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_number"]; ?></td></tr>
+                    <tr class = "ait_tr"><td class = "ait_td"><b>Pages</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_pages"]; ?></td></tr>
 
 
                     <tr class = "ait_tr"><td class = "ait_td" style="color: grey;">Wordpress-ID</td><td class = "ait_td" style="color: grey"><?php echo $ref_center_array["ref_wpid"]; ?></td></tr>
                     <tr class = "ait_tr"><td class = "ait_td" style="color: grey">Ediana-ID</td><td class = "ait_td" style="color: grey"><?php echo $ref_center_array["ref_id"]; ?></td></tr>
                 </table>
-
-            </div>
-
-
-
-        </div>
-
-        <div class="lit_output_4" id="2">
-            <div style="cursor: pointer;" onclick="literature_plus_expand_excerpt()">
-                <div class="alert alert-info">
-                <h3 style="margin-bottom:20px; margin-top: 20px;">Excerpt</h3>
-                </div>
+                <!--TODO make url visible for linkback to this site-->
             </div>
         </div>
 
-            <div class="litplus_exc">
-                <?php
-                $inscr_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_inscription` WHERE ref_wpid = " . $ID . ";");
-                $inscr_count_array = mysqli_fetch_assoc($inscr_count);
-                echo "Inscription (" . $inscr_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Inscription</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $inscr_full = mysqli_query($con, "SELECT * FROM `exc_inscription` WHERE ref_wpid = " . $ID . ";");
-                        while ($inscr = mysqli_fetch_assoc($inscr_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $inscr["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $inscr["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $inscr["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
+            <div class="alert alert-info" >
+                <h3 style="margin-top: 0.5rem;">Excerpt</h3>
             </div>
 
-            <div class="litplus_exc">
-                <?php
-                $signs_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_signs` WHERE ref_wpid = " . $ID . ";");
-                $signs_count_array = mysqli_fetch_assoc($signs_count);
-                echo "Signs (" . $signs_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
 
-                <div>
-                    <table class = "add_info_table">
 
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Sign</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $signs_full = mysqli_query($con, "SELECT * FROM `exc_signs` WHERE ref_wpid = " . $ID . ";");
-                        while ($signs = mysqli_fetch_assoc($signs_full))
-                        {
+            <?php //Load Excerpts via method
 
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $signs["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $signs["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $signs["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
-
+            buildExcerpt ($ID, "inscription");
+            buildExcerpt ($ID, "signs");
+            buildExcerpt ($ID, "names");
+            buildExcerpt ($ID, "lexemes");
+            buildExcerpt ($ID, "suffixes");
+            buildExcerpt ($ID, "endings");
+            buildExcerpt ($ID, "sound_law");
+            buildExcerpt ($ID, "reconstructions");
+            ?>
+            <div class="alert alert-info">
+                <h3 style="margin-top: 0.5rem;">Full Text</h3>
             </div>
 
-            <div class="litplus_exc">
-                <?php
-                $names_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_names` WHERE ref_wpid = " . $ID . ";");
-                $names_count_array = mysqli_fetch_assoc($names_count);
-                echo "Names (" . $names_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Name</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $names_full = mysqli_query($con, "SELECT * FROM `exc_names` WHERE ref_wpid = " . $ID . ";");
-                        while ($names = mysqli_fetch_assoc($names_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $names["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $names["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $names["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
-
-            </div>
-
-            <div class="litplus_exc">
-                <?php
-                $lexemes_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_lexemes` WHERE ref_wpid = " . $ID . ";");
-                $lexemes_count_array = mysqli_fetch_assoc($lexemes_count);
-                echo "Lexemes (" . $lexemes_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Language</span></b></td><td class = "ait_td"><b>Form</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $lexemes_full = mysqli_query($con, "SELECT * FROM `exc_lexemes` WHERE ref_wpid = " . $ID . ";");
-                        while ($lexemes = mysqli_fetch_assoc($lexemes_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><span class='titusspan'>" . $lexemes["exc_language"] . "</span></td>";
-                            echo "<td class = 'ait_td'><b><span class='titusspan'>" . $lexemes["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $lexemes["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $lexemes["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-
-                    </table>
-                </div>
-            </div>
-
-            <div class="litplus_exc">
-                <?php
-                $suffixes_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_suffixes` WHERE ref_wpid = " . $ID . ";");
-                $suffixes_count_array = mysqli_fetch_assoc($suffixes_count);
-                echo "Suffixes (" . $suffixes_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Suffix</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $suffixes_full = mysqli_query($con, "SELECT * FROM `exc_suffixes` WHERE ref_wpid = " . $ID . ";");
-                        while ($suffixes = mysqli_fetch_assoc($suffixes_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $suffixes["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $suffixes["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $suffixes["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
-
-            </div>
-
-            <div class="litplus_exc">
-                <?php
-                $endings_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_endings` WHERE ref_wpid = " . $ID . ";");
-                $endings_count_array = mysqli_fetch_assoc($endings_count);
-                echo "Endings (" . $endings_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Ending</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $endings_full = mysqli_query($con, "SELECT * FROM `exc_endings` WHERE ref_wpid = " . $ID . ";");
-                        while ($endings = mysqli_fetch_assoc($endings_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $endings["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $endings["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $endings["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
-
-            </div>
-
-            <div class="litplus_exc">
-                <?php
-                $keywords_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_keywords` WHERE ref_wpid = " . $ID . ";");
-                $keywords_count_array = mysqli_fetch_assoc($keywords_count);
-                echo "Keywords (" . $keywords_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Keyword</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $keywords_full = mysqli_query($con, "SELECT * FROM `exc_keywords` WHERE ref_wpid = " . $ID . ";");
-                        while ($keywords = mysqli_fetch_assoc($keywords_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $keywords["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $keywords["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $keywords["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
-
-            </div>
-
-            <div class="litplus_exc">
-                <?php
-                $sound_laws_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_sound_law` WHERE ref_wpid = " . $ID . ";");
-                $sound_laws_count_array = mysqli_fetch_assoc($sound_laws_count);
-                echo "Sound Laws (" . $sound_laws_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Sound Law</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $sound_laws_full = mysqli_query($con, "SELECT * FROM `exc_sound_law` WHERE ref_wpid = " . $ID . ";");
-                        while ($sound_laws = mysqli_fetch_assoc($sound_laws_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $sound_laws["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $sound_laws["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $sound_laws["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
-
-            </div>
-
-            <div class="litplus_exc">
-                <?php
-                $reconstructions_count = mysqli_query($con, "SELECT count(ref_id) AS counter FROM `exc_reconstructions` WHERE ref_wpid = " . $ID . ";");
-                $reconstructions_count_array = mysqli_fetch_assoc($reconstructions_count);
-                echo "Reconstructions (" . $reconstructions_count_array["counter"] . ")";
-                ?>
-                <hr class="litplus_exc_hr"/>
-
-                <div>
-                    <table class = "add_info_table">
-
-                        <tr class = "ait_tr"><td class = "ait_td"><b>Reconstruction</span></b></td><td class = "ait_td"><b>Pages</b></td><td class = "ait_td"><b>Additional Information</b></td></tr>
-                        <?php
-                        $reconstructions_full = mysqli_query($con, "SELECT * FROM `exc_reconstructions` WHERE ref_wpid = " . $ID . ";");
-                        while ($reconstructions = mysqli_fetch_assoc($reconstructions_full))
-                        {
-
-                            echo "<tr class = 'ait_tr'><td class = 'ait_td'><b><span class='titusspan'>" . $reconstructions["exc_form"] . "</span></b></td>";
-                            echo "<td class = 'ait_td'><i>" . $reconstructions["exc_pages"] . "</i></td>";
-                            echo "<td class = 'ait_td'>" . $reconstructions["exc_info"] . "</td></tr>";
-
-                        }
-                        ?>
-
-                    </table>
-                </div>
-
-            </div>
-
-        </div>
     </div>
+
+
 
     <div class="lit_output_5" id="3">
         <div style="cursor: pointer;" onclick="literature_plus_expand_fulltext()">
 
-            <div class="alert alert-secondary">
-                <h3 style="margin-bottom:20px; margin-top: 20px;">Full Text</h3>
-            </div>
         </div>
         <div style="text-align: center;">
             <object data="LITERATURE/<?php echo $ref_center_array["ref_wpid"]; ?>.pdf" type="application/pdf" class="litplus_pdf"></object>
