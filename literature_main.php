@@ -126,6 +126,6 @@ include "footer.php";
 ?>
 <script src="Literature/js/literature_functions.js"></script>
 <script src="Literature/js/quicksearch_functions.js"></script>
-
+<script src="Literature/js/lit_lemma.js"></script>
 
 

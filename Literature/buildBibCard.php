@@ -168,22 +168,23 @@ $online_text = "<div class='card' style='margin-bottom: 1rem;'> "; //href gegebe
 						if ($center_2["ref_pages"] != "") {$online_text .= "" . $center_2["ref_pages"] . ". ";}
 						
 $number = (string) $counter;
-						
 $online_text .= "
     <div id='exampleAccordion$number' class='collapse' role='tabpanel'>
     <hr>
     <h6 class=\"card-subtitle mb-2 text-muted\">Referenced Lemmata</h6>
-    
-<a href='#' class='badge badge-info'>se <span class='badge badge-light'>4</span></a> <a href='#' class='badge badge-info'>=e- <span class='badge badge-light'>3</span></a> <a href='#' class='badge badge-info'>tideime/i- <span class='badge badge-light'>3</span></a> <a href='#' class='badge badge-info'>me <span class='badge badge-light'>2</span></a> <a href='#' class='badge badge-info'>lada- <span class='badge badge-light'>2</span></a> <span class='badge badge-secondary'>kbi(je)- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>wassa-? <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>ehbi(je)- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>tuhe(s)- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>ss(e/i)- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>tibe <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>parttala- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>ebe- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>ebeñne/i- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>tub(e)i- (di) <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>kume-? <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>?-dawa- (ti) <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>xahba- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>tr.u.uwe..- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>ẽ.ñenẽn(e)/i- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>trbbule(/i)- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>.keriwe- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>?-dabeh(e/i)- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>ta- <span class='badge badge-light'>1</span></span> <span class='badge badge-secondary'>ẽkuwe- <span class='badge badge-light'>1</span></span> </li>
-    
+   <div>
+      
+   
+  </div>
+  
     </ul>
     </div>
 </div>
 	<div class=\"card-footer text-muted \">
     <ul class=\"nav nav-pills card-header-pills pull-right\">
     <li class='nav-item'>
-    <a  class='nav-link lemma' data-toggle='collapse' data-parent='#results'
-    href='#exampleAccordion$number' role='button' aria-expanded='true' aria-controls='exampleAccordion$number'> 
+    <a  class='nav-link lemma' data-toggle='collapse' data-lit_id ='" . $ID . "' data-switch = 'off' data-parent='#results'
+    href='#exampleAccordion$number' role='button' id='lemma_button$number' aria-expanded='true' aria-controls='exampleAccordion$number'> 
                             <i class=\"fa fa-info-circle\"></i> Additional Information                  </a>
        </li>
       <li class=\"nav-item\">
@@ -223,6 +224,6 @@ $online_text .= "
 
 
 ?>
-<script src="Literature/js/lit_lemma.js"></script>
+
 
 
