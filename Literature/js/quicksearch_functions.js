@@ -40,6 +40,7 @@ function quickSearch(offset_value){
         + "&offset=" + offset,
         success: function(output) {
             $("#results").html(output);
+            window.scrollTo(0, 0); //Animate Scrolling
 
         }
     })
@@ -117,6 +118,7 @@ function advancedSearch(offset_value){
                 + "&offset=" + offset,
                 success: function (output) {
                     $("#results").html(output);
+                    window.scrollTo(0, 0);
                 }
 
             })
