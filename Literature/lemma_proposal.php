@@ -91,14 +91,10 @@ while ($lemma_id_result = mysqli_fetch_assoc($lemma_id))
 						
 						$lemma_full = mysqli_fetch_assoc($lemma_full);
 						
-	
+
 						echo "<a href='http://www.dwaks.gwi.uni-muenchen.de/alt/dictionary.php?lemma=" . $L_id . "' target='_blank'><div class='single_form_proposal'>" . $lemma_full["L_lemma_full"] . "</div></a>";
 
 						} // ENDE
-
-
-
-
 
 
 
