@@ -4,5 +4,9 @@ $(".lemma_button0").click(
         alert("click");
     });
 
+function con_lemmaProposal(ID)
+{
+    alert(ID);
+};
 
 
