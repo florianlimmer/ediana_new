@@ -1,7 +1,11 @@
 <?php 
 include "../log.inc.php";
 
-$ID = $_POST["lit_id"];
+if (isset($_POST["lit_id"])){
+$ID = $_POST["lit_id"];}
+else {
+    $ID = 1751;
+}
 
 $pattern = '<span class="o\_ref">[<id>' . $ID . '</id>]';
 
