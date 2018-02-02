@@ -25,6 +25,7 @@ $("#quickSearch").on('keyup change',
 
 });
 
+// Quicksearch Suchfunktion
 
 function quickSearch(offset_value){
 
@@ -43,27 +44,30 @@ function quickSearch(offset_value){
         }
     })
 
-    $.ajax({
+    //TODO Performanceoptimierung?
 
-        type: "POST",
-        url: "Literature/lit_pagination.php",
-        data: "input=" + searchInput,
-        success: function(output){
-            $("#pagination").html(output);
-        }
+    //Pagination
 
-    })
+    if(offset_value == 0){//nur wenn die Suche zum 1. Mal aufgerufen wird (verbesserbar: und falls man nochmal auf die 1. Seite klickt...)
 
+        $.ajax({
 
+            type: "POST",
+            url: "Literature/lit_pagination.php",
+            data: "input=" + searchInput,
+            success: function(output){
+                $("#pagination").html(output);
+            }
+
+        })
+    }
 }
 
-$("#searchButton").click(
+// Advanced Suchfunktion
 
+function advancedSearch(offset_value){
 
-    function(e){
-
-
-        e.preventDefault();
+        offset= offset_value;
 
         author = $("#inputAuthor").val();
         title = $("#inputTitle").val();
@@ -98,7 +102,6 @@ $("#searchButton").click(
         }
 
 
-
             $.ajax({
 
                 type: "POST",
@@ -110,16 +113,39 @@ $("#searchButton").click(
                 + "&title=" + title
                 + "&journal=" + journal
                 + "&publisher=" + publisher
-                + "&type=" + type,
+                + "&type=" + type
+                + "&offset=" + offset,
                 success: function (output) {
                     $("#results").html(output);
                 }
 
             })
 
+        //Pagination
+
+        if(offset_value == 0){//nur wenn die Suche zum 1. Mal aufgerufen wird (verbesserbar: und falls man nochmal auf die 1. Seite klickt...)
+
+            $.ajax({
+
+                type: "POST",
+                url: "Literature/lit_paginationAdvanced.php",
+                data: "author=" + author
+                + "&year=" + year
+                + "&min_year=" + min_year
+                + "&max_year=" + max_year
+                + "&title=" + title
+                + "&journal=" + journal
+                + "&publisher=" + publisher
+                + "&type=" + type,
+                success: function(output){
+                    $("#pagination").html(output);
+                }
+
+            })
+        }
 
 
-    });
+    };
 
 
 

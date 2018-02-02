@@ -33,9 +33,9 @@ include "Literature/lit_slider.php"
             </div>
 
 
-                <!--Collapse -->
+                <!--Collapse class="collapse" id="collapseExample"  -->
 
-            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
@@ -102,7 +102,7 @@ include "Literature/lit_slider.php"
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-sm" id="searchButton">Search</button><!--Search Button-->
+                    <button type="submit" class="btn btn-primary btn-sm" onclick='advancedSearch(0)' id="searchButton">Search</button><!--Search Button-->
 
                 </div><!--card-body-->
             </div><!--/End Collapse-->

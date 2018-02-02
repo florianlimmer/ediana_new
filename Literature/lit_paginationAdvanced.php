@@ -10,7 +10,6 @@ $journal = $_POST["journal"];
 $publisher = $_POST["publisher"];
 $min_year = $_POST["min_year"];
 $max_year = $_POST["max_year"];
-
 if (!$type || $type == 'Choose...'){ //falls Type nicht erzeugt wurde oder auf default gesetzt ist
     $type = ''; //workaround...
 }
@@ -27,12 +26,9 @@ if (!$year){
 if (!$min_year){
     $min_year = 0; //workaround...
 }
-
 if (!$max_year){
     $max_year = 3000; //workaround...
 }
-
-$offset = $_POST["offset"];
 
 
 $ref_order = mysqli_query($con, "
@@ -48,26 +44,44 @@ $ref_order = mysqli_query($con, "
         AND ref_center.ref_title_jv LIKE '%" . $journal . "%'
         AND ref_center.ref_title_simplex LIKE '%" . $title . "%'
         GROUP BY ref_center.ref_year_int
-        LIMIT 15
-        OFFSET $offset
 
 ");
 
-$i = 0;
-while ($order = mysqli_fetch_assoc($ref_order))
-{
+$number = mysqli_num_rows($ref_order);
 
-    $output = SQL_reference_output ($order["ref_wpid"], $i);
-
-    echo $output;
-    $i++;
+if ($number==0) {
+    echo "";
 }
+else {
+    echo "
+        <nav aria-label=\"Page navigation top\">
+        <ul class=\"pagination pagination-sm justify-content-end\">
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">
+                    <span aria-hidden=\"true\">&laquo;</span>
+                    <span class=\"sr-only\">Previous</span>
+                </a>
+            </li>";
 
-if (mysqli_num_rows($ref_order)==0) {
-    echo "<span class=\"text-muted\"> No results found.</span>";
+
+    for ($i = 0; $i <= $number; $i += 15) {
+        echo "<li class='page-item'><a class='page-link' href='javascript:advancedSearch($i)'>";
+        echo (($i/15) + 1);
+        echo "</a></li>";
+    }
+
+
+    echo "
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\" aria-label=\"Next\">
+        <span aria-hidden=\"true\">&raquo;</span>
+                    <span class=\"sr-only\">Next</span>
+                </a>
+            </li>
+        </ul>
+        </nav>";
+
+    //echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";
 }
-
-//echo "<script type='text/javascript' src='BIBLIOGRAPHY/JAVA_scripts/lit_lemma.js'></script>";
-
 
 ?>

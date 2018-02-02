@@ -16,7 +16,7 @@ if(strlen($input) >= 3)
     );
 
     $number = mysqli_num_rows($ref_order);
-    
+
     if ($number==0) {
         echo "";
     }
@@ -31,9 +31,8 @@ if(strlen($input) >= 3)
                 </a>
             </li>";
 
-        //build pagination buttons with functionality
 
-        for ($i = 0; $i <= $number; $i += 15) { //TODO change start value, so that each further page is shown as $i + 1
+        for ($i = 0; $i <= $number; $i += 15) {
             echo "<li class='page-item'><a class='page-link' href='javascript:quickSearch($i)'>";
             echo (($i/15) + 1);
             echo "</a></li>";
