@@ -173,7 +173,10 @@ $online_text .= "
     <hr>
     <h6 class=\"card-subtitle mb-2 text-muted\">Referenced Lemmata</h6>
    <div>
-      
+   
+   <div id='proposal_content$number'>
+   
+   </div>
    
   </div>
   
@@ -183,8 +186,8 @@ $online_text .= "
 	<div class=\"card-footer text-muted \">
     <ul class=\"nav nav-pills card-header-pills pull-right\">
     <li class='nav-item'>
-    <a  class='nav-link lemma' data-toggle='collapse' data-lit_id ='" . $ID . "' data-switch = 'off' data-parent='#results'
-    href='#exampleAccordion$number' role='button' onclick='con_lemmaProposal($ID)' id='lemma_button$number' aria-expanded='true' aria-controls='exampleAccordion$number'> 
+    <a  class='nav-link lemma' data-toggle='collapse' id='lemma_nav' data-lit_id ='" . $ID . "' data-switch = 'off' data-parent='#results'
+    href='#exampleAccordion$number' role='button' onclick='con_lemmaProposal($ID, $number)'  aria-expanded='true' aria-controls='exampleAccordion$number'> 
                             <i class=\"fa fa-info-circle\"></i> Additional Information                  </a>
        </li>
       <li class=\"nav-item\">
