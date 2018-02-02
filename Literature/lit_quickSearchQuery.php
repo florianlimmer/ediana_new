@@ -46,7 +46,7 @@ if(strlen($input) >= 3)
         </li>";
 
     for($i=1; $i<=$number/15; $i++){ //TODO change start value, so that each further page is shown as $i + 1
-        echo"<li class='page-item'><a class='page-link' href='$_PHP_SELF?offset=".$i."'>";
+        echo"<li class='page-item'><a class='page-link' href='lit_quickSearchQuery.php?offset=".$i."'>";
         echo $i+1;
         echo"</a></li>";
     }
