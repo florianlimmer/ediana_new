@@ -79,22 +79,28 @@ $lemma_id = mysqli_query($con,
 		GROUP BY a.L_id
 	"); 
 
-while ($lemma_id_result = mysqli_fetch_assoc($lemma_id))
-						{
-	
-						$L_id = $lemma_id_result["L_id"];
-						
-						$lemma_full = mysqli_query($con,
-						"SELECT * FROM `lem_central_head`
+if ($lemma_id_result = mysqli_fetch_assoc($lemma_id)) {
+
+    $L_id = $lemma_id_result["L_id"];
+
+    $lemma_full = mysqli_query($con,
+        "SELECT * FROM `lem_central_head`
 						WHERE L_id = " . $L_id . " AND L_order = 1"
-						);
-						
-						$lemma_full = mysqli_fetch_assoc($lemma_full);
-						
+    );
 
-						echo "<a href='http://www.dwaks.gwi.uni-muenchen.de/alt/dictionary.php?lemma=" . $L_id . "' target='_blank'><div class='single_form_proposal'>" . $lemma_full["L_lemma_full"] . "</div></a>";
+    $lemma_full = mysqli_fetch_assoc($lemma_full);
 
-						} // ENDE
+
+    echo "<a href='http://www.dwaks.gwi.uni-muenchen.de/alt/dictionary.php?lemma=" . $L_id . "' target='_blank'><span class='badge badge-pill badge-primary'>" . $lemma_full["L_lemma_full"] . "</span> </a>";
+
+}// ENDE
+
+
+else{
+	echo"No additional information available.";
+}
+
+
 
 
 

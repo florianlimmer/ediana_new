@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="//localhost/ediana/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//localhost/ediana_new/css/bootstrap.min.css">
     <!-- Other CSS -->
-    <link rel="stylesheet" type="text/css" href="//localhost/ediana/css/general_style.css">
+    <link rel="stylesheet" type="text/css" href="//localhost/ediana_new/css/general_style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> <!--TODO lokal einbinden-->
 

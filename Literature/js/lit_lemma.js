@@ -16,5 +16,3 @@ function con_lemmaProposal(ID, counter){
             }
 
         })};
-
-
