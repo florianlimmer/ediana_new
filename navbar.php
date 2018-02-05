@@ -26,7 +26,7 @@
         <img src="//localhost/ediana/images/sing_gloss_white.png" width="20" height="20" alt=""><!--TODO Bildausrichtung im collapse menü-->
     </a>
 
-    <a class="navbar-brand" href="home.php">eDiaNa <span class="badge badge-secondary">beta</span></a>
+    <a class="navbar-brand" href="//localhost/ediana/home.php">eDiaNa <span class="badge badge-secondary">beta</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

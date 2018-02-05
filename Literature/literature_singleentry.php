@@ -5,19 +5,21 @@ $benutzer = $_SESSION;
 include "../log.inc.php";
 include "../navbar.php"; //TODO Alle Links tot!
 include "../begincontent.php";
-include "lit_getExcerpts.php";
+include "lit_getExcerpts.php"; // Funktion zur Exzerpterzeugung
 
 include "buildLitEntry.php"; // Funktion zur Literaturkonversion
 
 $ID = $_GET["wpid"];
 
-/*if(isset($_SESSION["Username"])) {
+echo $_SESSION["Username"];
+
+if(isset($_SESSION["Username"])) {
+
+    echo"you're logged in";
+
+}
+else {}
 ?>
-
-<?php }
-else {*/ ?>
-
-<div style=""></div>
 
 <!--<div class="upper_menu_int">
     <ul class="ul_upper">
@@ -42,7 +44,7 @@ else {*/ ?>
 
 
         echo "                
-                    <h3 style=\"margin-top: 0.5rem;\" class=\"display-4\" >
+                    <h3 style=\"margin-top: 0.5rem; margin-bottom: 1rem;\" class=\"display-4\" >
                " . $ref_code["ref_sigle"]."</h3>";
 
         //Lit Entry Bibliography Style
@@ -63,9 +65,9 @@ else {*/ ?>
             <div>
                 <table class = "table">
 
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Sigle</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_sigle"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Year</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_year"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Authors</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_authors"]; ?></td></tr>
+                    <tr><td><b>Sigle</b></td><td ><?php echo $ref_center_array["ref_sigle"]; ?></td></tr>
+                    <tr><td><b>Year</b></td><td ><?php echo $ref_center_array["ref_year"]; ?></td></tr>
+                    <tr><td><b>Number Authors</b></td><td ><?php echo $ref_center_array["ref_authors"]; ?></td></tr>
 
                     <?php // Authorenschleife
 
@@ -82,12 +84,11 @@ else {*/ ?>
 
                     }
 
-                    ?>
+                    if($ref_center_array["ref_editors"] != 0){
+                        echo '<tr><td ><b>Number Editors</td></b><td>' . $ref_center_array["ref_editors"] . '</td></tr>';
+                    }
 
-
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Editors</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_editors"]; ?></td></tr>
-
-                    <?php // Editorenschleife
+                    // Editorenschleife
 
                     $ref_editors = mysqli_query($con, "SELECT * FROM `ref_editors` WHERE ref_wpid = " . $ID . ";");
 
@@ -102,20 +103,38 @@ else {*/ ?>
 
                     }
 
-                    ?>
+                    //Type, Title, Subtitle, etc.
+
+                    if($ref_center_array["ref_type"] != ""){
+                        echo '<tr><td ><b>Type</td></b><td>' . $ref_center_array["ref_type"] . '</td></tr>';
+                    }
 
 
+                    if($ref_center_array["ref_title"] != ""){
+                        echo '<tr><td ><b>Title</td></b><td>' . $ref_center_array["ref_title"] . '</td></tr>';
+                    }
 
+                    if($ref_center_array["ref_subtitle"] != ""){
+                        echo '<tr><td ><b>Subtitle</td></b><td>' . $ref_center_array["ref_subtitle"] . '</td></tr>';
+                    }
 
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Publication Type</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_type"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Title</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_title"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Subtitle</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_subtitle"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Series</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_series"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Title Journal / Volume</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_title_jv"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Title Shortcut</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_shortcut_jv"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Publishing Locations</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_locations"]; ?></td></tr>
+                    if($ref_center_array["ref_series"] != ""){
+                        echo '<tr><td ><b>Series</td></b><td>' . $ref_center_array["ref_series"] . '</td></tr>';
+                    }
 
-                    <?php // Ortsschleife
+                    if($ref_center_array["ref_title_jv"] != ""){
+                        echo '<tr><td ><b>Title Journal / Volume</td></b><td>' . $ref_center_array["ref_title_jv"] . '</td></tr>';
+                    }
+
+                    if($ref_center_array["ref_shortcut_jv"] != ""){
+                        echo '<tr><td ><b>Title Shortcut</td></b><td>' . $ref_center_array["ref_shortcut_jv"] . '</td></tr>';
+                    }
+
+                    if($ref_center_array["ref_locations"] != ""){
+                        echo '<tr><td ><b>No. of Publishing Locations</td></b><td>' . $ref_center_array["ref_locations"] . '</td></tr>';
+                    }
+
+                    // Ortsschleife
 
                     $ref_loc = mysqli_query($con, "SELECT * FROM `ref_locations` WHERE ref_wpid = " . $ID . ";");
 
@@ -130,12 +149,13 @@ else {*/ ?>
 
                     }
 
-                    ?>
 
 
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Number Publishing Companies</td><td class = "ait_td"><?php echo $ref_center_array["ref_companies"]; ?></td></tr>
+                    if($ref_center_array["ref_companies"] != ""){
+                        echo '<tr><td ><b>No. of Publishing Companies</td></b><td>' . $ref_center_array["ref_companies"] . '</td></tr>';
+                    }
 
-                    <?php // Verlagsschleife
+                    // Verlagsschleife
 
                     $ref_comp = mysqli_query($con, "SELECT * FROM `ref_companies` WHERE ref_wpid = " . $ID . ";");
 
@@ -150,16 +170,28 @@ else {*/ ?>
 
                     }
 
+                    if($ref_center_array["ref_url"] != ""){
+                        echo '<tr><td ><b>URL</td></b><td>' . $ref_center_array["ref_url"] . '</td></tr>';
+                    }
+
+                    if($ref_center_array["ref_url_add"] != ""){
+                        echo '<tr><td ><b>URL Addendum</td></b><td>' . $ref_center_array["ref_url_add"] . '</td></tr>';
+                    }
+
+                    if($ref_center_array["ref_number"] != ""){
+                        echo '<tr><td ><b>Number/Edition</td></b><td>' . $ref_center_array["ref_number"] . '</td></tr>';
+                    }
+
+                    if($ref_center_array["ref_pages"] != ""){
+                        echo '<tr><td ><b>Pages</td></b><td>' . $ref_center_array["ref_pages"] . '</td></tr>';
+                    }
+
                     ?>
 
-                    <tr class = "ait_tr"><td class = "ait_td"><b>URL</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_url"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>URL Addendum</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_url_add"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Number / Edition</b></td><td class = "ait_td"><?php echo $ref_center_array["ref_number"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td"><b>Pages</td></b><td class = "ait_td"><?php echo $ref_center_array["ref_pages"]; ?></td></tr>
 
-
-                    <tr class = "ait_tr"><td class = "ait_td" style="color: grey;">Wordpress-ID</td><td class = "ait_td" style="color: grey"><?php echo $ref_center_array["ref_wpid"]; ?></td></tr>
-                    <tr class = "ait_tr"><td class = "ait_td" style="color: grey">Ediana-ID</td><td class = "ait_td" style="color: grey"><?php echo $ref_center_array["ref_id"]; ?></td></tr>
+                    <tr ><td  style="color: grey;">Wordpress-ID</td><td  style="color: grey"><?php echo $ref_center_array["ref_wpid"]; ?></td></tr>
+                    <tr ><td  style="color: grey">Ediana-ID</td><td  style="color: grey"><?php echo $ref_center_array["ref_id"]; ?></td></tr>
+                    <tr ><td  style="color: grey">Link this page</td><td  style="color: grey"><?php echo $_SERVER['PHP_SELF']."?wpid=".$ID ?></td></tr>
                 </table>
                 <!--TODO make url visible for linkback to this site-->
             </div>
