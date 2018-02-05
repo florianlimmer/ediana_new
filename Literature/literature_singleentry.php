@@ -186,22 +186,19 @@ else {*/ ?>
                 <h3 style="margin-top: 0.5rem;">Full Text</h3>
             </div>
 
-    </div>
+    </div> <!--TODO LogIn!-->
 
 
 
-    <div class="lit_output_5" id="3">
-        <div style="cursor: pointer;" onclick="literature_plus_expand_fulltext()">
+        <!--<div class="lit_output_5" id="3">
+            <div style="cursor: pointer;" onclick="literature_plus_expand_fulltext()">
 
-        </div>
-        <div style="text-align: center;">
-            <object data="LITERATURE/<?php echo $ref_center_array["ref_wpid"]; ?>.pdf" type="application/pdf" class="litplus_pdf"></object>
-        </div>
-        <br/>
-    </div>
-
-    </br>
-
+            </div>
+            <div style="text-align: center;">
+                <object data="LITERATURE/<?php echo $ref_center_array["ref_wpid"]; ?>.pdf" type="application/pdf" class="litplus_pdf"></object>
+            </div>
+            <br/>
+        </div>-->
 </div> <!-- End "lit_extended" -->
 
 
