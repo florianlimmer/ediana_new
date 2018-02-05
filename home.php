@@ -97,41 +97,41 @@ include "navbar.php";
                     <h2 class="card-title">Internal & API</h2>
                     <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
 
-                    <p><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target=".bd-example-modal-sm">Login</button>
-                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
+                    <div style="">
+                        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target=".bd-example-modal-sm">Login</button>
+                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
 
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Internal Login</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Internal Login</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <form method="post" action="login.php" name="login">
+                                            <div class="form-group">
+                                                <label for="username" class="col-form-label">Username</label>
+                                                <input type="text" class="form-control" id="user" placeholder="Username" name="user">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password" class="col-form-label">Password</label>
+                                                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</input>
+                                        <input type="submit" class="btn btn-outline-success" data-dismiss="modal" value="Login" class="pure-button">Login</input>
+                                    </div>
+
                                 </div>
-
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="username" class="col-form-label">Username</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password" class="col-form-label">Password</label>
-                                            <input type="text" class="form-control" id="password" placeholder="Password">
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Login</button>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-
-                    </p>
                 </div>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
