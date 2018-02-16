@@ -28,8 +28,13 @@ $("#quickSearch").on('keyup change',
 
 function quickSearch(offset_value){
 
+    //implemented spinner in results field, since quicksearch currently is too slow and spinner also needs to be
+    //shown when using pagination
+    //$("#quickSearchButton").html("<i class='fa fa-spinner fa-spin'></i>");
     searchInput = $("#quickSearch").val();
     offset= offset_value;
+
+
 
     $.ajax({
 
@@ -39,6 +44,8 @@ function quickSearch(offset_value){
         + "&offset=" + offset,
         success: function(output) {
             $("#results").html(output);
+            //$("#quickSearchButton").children("i").remove();
+            //$("#quickSearchButton").html("Search");
             window.scrollTo(0, 0); //Animate Scrolling
 
         }
@@ -48,24 +55,26 @@ function quickSearch(offset_value){
 
     //Pagination
 
-    if(offset_value == 0){//nur wenn die Suche zum 1. Mal aufgerufen wird (verbesserbar: und falls man nochmal auf die 1. Seite klickt...)
-
-        $.ajax({
+    $("#pagination").html("<i class='fa fa-spinner fa-spin'></i>");
+    $.ajax({
 
             type: "POST",
             url: "Literature/lit_pagination.php",
-            data: "input=" + searchInput,
+            data: "input=" + searchInput
+            + "&offset=" + offset,
             success: function(output){
+                $("#pagination").children("i").remove();
                 $("#pagination").html(output);
             }
 
         })
-    }
 }
 
 // Advanced Suchfunktion
 
 function advancedSearch(offset_value){
+
+    $("#searchButton").html("<i class='fa fa-spinner fa-spin'></i>");
 
         offset= offset_value;
 
@@ -117,6 +126,8 @@ function advancedSearch(offset_value){
                 + "&offset=" + offset,
                 success: function (output) {
                     $("#results").html(output);
+                    $("#searchButton").children("i").remove();
+                    $("#searchButton").html("Search");
                     window.scrollTo(0, 0);
                 }
 
@@ -124,26 +135,24 @@ function advancedSearch(offset_value){
 
         //Pagination
 
-        if(offset_value == 0){//nur wenn die Suche zum 1. Mal aufgerufen wird (verbesserbar: und falls man nochmal auf die 1. Seite klickt...)
+       $.ajax({
 
-            $.ajax({
+                    type: "POST",
+                    url: "Literature/lit_paginationAdvanced.php",
+                    data: "author=" + author
+                    + "&year=" + year
+                    + "&min_year=" + min_year
+                    + "&max_year=" + max_year
+                    + "&title=" + title
+                    + "&journal=" + journal
+                    + "&publisher=" + publisher
+                    + "&offset=" + offset
+                    + "&type=" + type,
+                    success: function(output){
+                        $("#pagination").html(output);
+                    }
 
-                type: "POST",
-                url: "Literature/lit_paginationAdvanced.php",
-                data: "author=" + author
-                + "&year=" + year
-                + "&min_year=" + min_year
-                + "&max_year=" + max_year
-                + "&title=" + title
-                + "&journal=" + journal
-                + "&publisher=" + publisher
-                + "&type=" + type,
-                success: function(output){
-                    $("#pagination").html(output);
-                }
-
-            })
-        }
+                })
 
     };
 

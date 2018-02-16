@@ -20,7 +20,7 @@ include "Literature/lit_slider.php"
                     </datalist>
                 </div>
                 <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary form-control" onclick='quickSearch(0)' id="quickSearchButton">Search</button>
+                    <button type="submit" data-loading-text="Loading..." class="btn btn-primary form-control" onclick='quickSearch(0)' id="quickSearchButton">Search</button>
                 </div>
                 <div class="col-lg-3">
                     <a data-toggle="collapse" id="advancedSearchLink" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -33,9 +33,9 @@ include "Literature/lit_slider.php"
             </div>
 
 
-                <!--Collapse   -->
+                <!--Collapse class="collapse" id="collapseExample"  -->
 
-            <div class="collapse" id="collapseExample" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div  style="margin-top: 1rem; margin-bottom: 1rem;">
                 <div class="card card-body">
 
                     <!--default options-->
