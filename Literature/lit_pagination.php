@@ -63,7 +63,7 @@ if(strlen($input) >= 3) {
                     echo(($i / 15) + 1);
                     echo "</a></li>";
                 }
-            }
+            } //TODO 3 buttons are printed even for results that don't have three pages - advanced Search as well
 
         }
 

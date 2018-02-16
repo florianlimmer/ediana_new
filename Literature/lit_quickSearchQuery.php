@@ -9,7 +9,7 @@ if(strlen($input) >= 3)
 {
     $ref_order = mysqli_query($con, "
 
-        SELECT ref_center.ref_wpid FROM `ref_authors` RIGHT JOIN `ref_center` ON     ref_authors.ref_wpid = ref_center.ref_wpid
+        SELECT ref_center.ref_wpid FROM `ref_authors` RIGHT JOIN `ref_center` ON ref_authors.ref_wpid = ref_center.ref_wpid
         WHERE ref_authors.ref_secondname LIKE '%" . $input . "%'
         OR ref_center.ref_title_simplex LIKE '%" . $input . "%'
         ORDER BY ref_center.ref_year_int DESC
