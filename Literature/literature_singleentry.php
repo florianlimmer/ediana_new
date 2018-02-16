@@ -1,4 +1,3 @@
-
 <?php
 $ID = $_GET["wpid"];
 session_start();
@@ -7,6 +6,28 @@ include "../log.inc.php";
 include "../navbar.php"; //TODO Alle Links tot!
 include "lit_getExcerpts.php"; // Funktion zur Exzerpterzeugung
 include "buildLitEntry.php"; // Funktion zur Literaturkonversion
+?>
+<style>
+    /*TODO match colour (also with navpills below) */
+    .nav-pills > li > a.active {
+        background-color: #491217!important;
+        color: #FFFFFF;
+    }
+    .nav-pills > li > a{
+        color: #ffffff;!important;
+    }
+
+    .nav-pills > a.active {
+        background-color: #491217!important;
+        color: #FFFFFF;
+    }
+
+    .nav-pills > a {
+        color: #491217;!important;
+    }
+
+</style>
+<?php
 
 $ref_order = mysqli_query($con, "SELECT * FROM `ref_center` WHERE ref_wpid = " . $ID . ";");
 $ref_code = mysqli_fetch_assoc($ref_order);
@@ -25,18 +46,18 @@ echo $output;
 //TODO Color nav pills
 echo' 
 <div class="container">
- <ul class="nav nav-pills" id="myTab" role="tablist">
+ <ul class="nav nav-pills red" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#addinfo" role="tab" aria-controls="home" aria-selected="true"><b>Additional Information</b></a>
             </li>
             <li class="nav-item">';
 
 //if no excerpts are available for that lit entry, the excerpt tab is disabled
-if(getAllExcerpts($ID)!= true){
-    echo "<a class=\"nav-link disabled\" id=\"profile-tab\" data-toggle=\"tab\" href=\"#excerpts\" role=\"tab\" aria-controls=\"profile\" aria-selected=\"false\"><b>Excerpts</b></a>";
-}else{
-    echo "<a class=\"nav-link\" id=\"profile-tab\" data-toggle=\"tab\" href=\"#excerpts\" role=\"tab\" aria-controls=\"profile\" aria-selected=\"false\"><b>Excerpts</b></a>";
-}
+            if(getAllExcerpts($ID)!= true){
+                echo "<a class=\"nav-link disabled\" id=\"profile-tab\" data-toggle=\"tab\" href=\"#excerpts\" role=\"tab\" aria-controls=\"profile\" aria-selected=\"false\"><b>Excerpts</b></a>";
+            }else{
+                echo "<a class=\"nav-link\" id=\"profile-tab\" data-toggle=\"tab\" href=\"#excerpts\" role=\"tab\" aria-controls=\"profile\" aria-selected=\"false\"><b>Excerpts</b></a>";
+            }
 
 echo'
                 </li>
@@ -44,9 +65,23 @@ echo'
                 <a class="nav-link disabled" id="contact-tab" data-toggle="tab" href="#fulltext" role="tab" aria-controls="contact" aria-selected="false"><b>Full Text</b></a>
             </li>
         </ul>  
-</div> 
+        </div> 
     </div>
 </div>';
+
+            ?>
+
+    <nav class="navbar navbar-light" style="background-color: #491217; margin-top: -35px;">
+        <div class="container justify-content-end">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search for excerpts" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+<?php
 
 
 //Begin Content Style
@@ -240,7 +275,7 @@ else {}
                         </div>
                     </div>
                     <div class="col-lg-2">
-                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link <?php if(getNumber($ID, "inscription") == 0) {echo"disabled";} ?>" id="v-pills-inscr-tab" data-toggle="pill" href="#v-pills-inscr"
                                role="tab" aria-controls="v-pills-home" aria-selected="true">Inscriptions <?php echo"(".getNumber($ID, "inscription").")"; ?></a>
                             <a class="nav-link <?php if(getNumber($ID, "signs") == 0) {echo"disabled";} ?>" id="v-pills-signs-tab" data-toggle="pill" href="#v-pills-signs"
