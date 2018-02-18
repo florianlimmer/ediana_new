@@ -18,8 +18,8 @@ function buildExcerpt ($ID, $excerptType)
         echo"
         
         <div>
-                    <table class='table'>
-                             <thead class=\"thead \">
+                    <table class='table' id='".$excerptType."'>
+                             <thead class=\"thead \" id='".$excerptType."'>
                                 <tr class='table-secondary'>
                                   <th scope=\"col\">Form</th>
                                   <th scope=\"col\">Pages</th>
@@ -42,6 +42,7 @@ function buildExcerpt ($ID, $excerptType)
 
         echo'</tbody></table>
                 </div><!--Enclosing div-->
+                
         
         ';
 
