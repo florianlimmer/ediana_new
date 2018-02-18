@@ -183,10 +183,94 @@ $online_text .= "
 </div>
 	<div class=\"card-footer text-muted \">
     <ul class=\"nav nav-pills card-header-pills pull-right\">
-    <li class='nav-item'>
+    <li class='nav-item'>";
+
+    $pattern = '<span class="o\_ref">[<id>' . $ID . '</id>]';
+
+    $lemma_id = mysqli_query($con,
+        "SELECT *
+		FROM(
+		SELECT L_id FROM lem_hierluw_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_cuneluw_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_hitt_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_luwgloss_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_luwhitt_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_luwoasstra_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_luwotra_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_lycia_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_lycib_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_lydi_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_misc_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_pala_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_pisi_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_recon_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_side_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		UNION ALL
+		SELECT L_id FROM lem_pie_text
+		WHERE L_text LIKE '%" . $pattern . "%'
+		GROUP BY L_id
+		) AS a
+		GROUP BY a.L_id
+	");
+
+    if (mysqli_num_rows($lemma_id)==0) {
+        $online_text .= "
+    <a  class='nav-link lemma disabled' data-toggle='collapse' id='lemma_nav' data-lit_id ='" . $ID . "' data-switch = 'off' data-parent='#results'
+    href='#exampleAccordion$number' role='button'  aria-expanded='true' aria-controls='exampleAccordion$number'> 
+                            <i class=\"fa fa-info-circle\"></i> Referenced Lemmata</a>";
+    }
+    else{
+        $online_text .= "
     <a  class='nav-link lemma' data-toggle='collapse' id='lemma_nav' data-lit_id ='" . $ID . "' data-switch = 'off' data-parent='#results'
     href='#exampleAccordion$number' role='button' onclick='con_lemmaProposal($ID, $number)'  aria-expanded='true' aria-controls='exampleAccordion$number'> 
-                            <i class=\"fa fa-info-circle\"></i> Additional Information</a>
+                            <i class=\"fa fa-info-circle\"></i> Referenced Lemmata</a>";
+	}
+
+    $online_text .= "
        </li>
       <li class=\"nav-item\">
         <a href='Literature/literature_singleentry.php?wpid=".$wp_id."' class=\"nav-link nav-link\" target='_blank' ><i class=\"fa fa-arrow-circle-right\"></i> Full Bibliography Entry</a>

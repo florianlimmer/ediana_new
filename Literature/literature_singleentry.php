@@ -13,7 +13,10 @@ include "buildLitEntry.php"; // Funktion zur Literaturkonversion
         background-color: #491217!important;
         color: #FFFFFF;
     }
-    .nav-pills > li > a{
+
+
+
+    .nav-pills > li > a {
         color: #ffffff;!important;
     }
 
