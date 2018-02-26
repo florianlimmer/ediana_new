@@ -21,12 +21,13 @@
 
 </head>
 <body>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">
-        <img src="//localhost/ediana/images/sing_gloss_white.png" width="20" height="20" alt=""><!--TODO Bildausrichtung im collapse menü-->
+        <img src="images/sing_gloss_white.png" width="20" height="20" alt=""><!--TODO Bildausrichtung im collapse menü-->
     </a>
 
-    <a class="navbar-brand" href="//localhost/ediana/home.php">eDiaNa <span class="badge badge-secondary">beta</span></a>
+    <a class="navbar-brand" href="home.php">eDiaNa <span class="badge badge-secondary">beta</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +35,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="//localhost/ediana/news.php">Project</a>
+                <a class="nav-link" href="news.php">Project</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Dictionary</a>
@@ -43,13 +44,13 @@
                 <a class="nav-link" href="#">Corpus</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="//localhost/ediana/literature_main.php">Literature</a>
+                <a class="nav-link" href="literature_main.php">Literature</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="//localhost/ediana/staff.php">Staff</a>
+                <a class="nav-link" href="ediana/staff.php">Staff</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="//localhost/ediana/collection.php">Collection</a>
+                <a class="nav-link" href="ediana/collection.php">Collection</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Internal</a>

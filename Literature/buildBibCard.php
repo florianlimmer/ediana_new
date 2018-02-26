@@ -5,7 +5,7 @@ function SQL_reference_output ($ID, $counter)
 {
 //Einbindung Login
 
-						include "../log.inc.php";
+						include "log.inc.php";
 
 
 //Definition der Wordpress-ID.
@@ -273,7 +273,7 @@ $online_text .= "
     $online_text .= "
        </li>
       <li class=\"nav-item\">
-        <a href='Literature/literature_singleentry.php?wpid=".$wp_id."' class=\"nav-link nav-link\" target='_blank' ><i class=\"fa fa-arrow-circle-right\"></i> Full Bibliography Entry</a>
+        <a href='literature_singleentry.php?wpid=".$wp_id."' class=\"nav-link nav-link\" target='_blank' ><i class=\"fa fa-arrow-circle-right\"></i> Full Bibliography Entry</a>
       </li>
     </ul>
 
