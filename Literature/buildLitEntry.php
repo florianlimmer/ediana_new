@@ -19,7 +19,7 @@ function SQL_reference_output ($ID)
 
 //Erste DIV und Link öffnen.
 
-    $online_text = "<div class='card' style='margin-bottom: 1rem;'> "; //href gegebenenfalls austauschen!
+    $online_text = "<div class='card' style='margin-bottom: 1rem; color: #464a4e'> "; //href gegebenenfalls austauschen!
 
 
     //Sigle
@@ -171,9 +171,12 @@ function SQL_reference_output ($ID)
 
   
     </ul>
+    
     </div>
+    
 </div>
 	
+	 
   
   
 </div><!-- Card Ende-->
