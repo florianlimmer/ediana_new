@@ -2,7 +2,7 @@
 
 function buildExcerpt ($ID, $excerptType)
 {
-    include "../log.inc.php";
+    include "log.inc.php";
     $wp_id = $ID;
     $type = $excerptType;
 
@@ -51,7 +51,7 @@ function buildExcerpt ($ID, $excerptType)
 
 function getNumber($ID, $excerptType){ //returns true if excerpts exist for this category
 
-    include "../log.inc.php";
+    include "log.inc.php";
 
     $table ='exc_' . $excerptType;
 

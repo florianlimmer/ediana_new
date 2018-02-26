@@ -51,6 +51,15 @@ SELECT ref_center.ref_wpid FROM `ref_authors`
 
 ");
 
+/*       WHERE ref_authors.ref_secondname LIKE '%'
+        AND ref_center.ref_year LIKE '%'
+        AND ref_companies.ref_company LIKE '%'
+        AND ref_center.ref_type LIKE '%'
+        AND ref_year_int BETWEEN 1850 AND 2017
+        AND ref_center.ref_title_jv LIKE '%'
+        AND ref_center.ref_title_simplex LIKE '%'
+        ORDER BY ref_center.ref_year_int DESC */
+
 $i = 0;
 while ($order = mysqli_fetch_assoc($ref_order))
 {

@@ -5,7 +5,7 @@ function SQL_reference_output ($ID)
 {
 //Einbindung Login
 
-    include "../log.inc.php";
+    include "log.inc.php";
 
 
 //Definition der Wordpress-ID.

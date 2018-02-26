@@ -2,12 +2,12 @@
 $ID = $_GET["wpid"];
 session_start();
 $benutzer = $_SESSION;
-include "../log.inc.php";
-include "../navbar.php"; //TODO Alle Links tot!
-include "lit_getExcerpts.php"; // Funktion zur Exzerpterzeugung
-include "buildLitEntry.php"; // Funktion zur Literaturkonversion
+include "log.inc.php";
+include "navbar.php"; //TODO Alle Links tot!
+include "Literature/lit_getExcerpts.php"; // Funktion zur Exzerpterzeugung
+include "Literature/buildLitEntry.php"; // Funktion zur Literaturkonversion
 ?>
-<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 <style>
     /*TODO match colour (also with navpills below) */
     .nav-pills > li > a.active {
@@ -111,7 +111,6 @@ else {}
             <div class="tab-pane fade show active" id="addinfo" role="tabpanel" aria-labelledby="home-tab">
                 <div class="container">
                     <div class="content">
-
                         <table class="table table-striped">
 
                             <tr><td><b>Sigle</b></td><td ><?php echo $ref_center_array["ref_sigle"]; ?></td></tr>
@@ -373,9 +372,9 @@ else {}
     <?php
 //} ?>
 
-<?php include "../footer.php"; ?>
+<?php include "footer.php"; ?>
 <script>
 
 </script>
-<script src="js/singleEntry_functions.js"></script>
+<script src="Literature/js/singleEntry_functions.js"></script>
 
