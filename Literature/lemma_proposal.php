@@ -77,9 +77,11 @@ $lemma_id = mysqli_query($con,
 		GROUP BY L_id
 		) AS a
 		GROUP BY a.L_id
-	"); 
+	");
+if(mysqli_num_rows($lemma_id)!=0){
 
-if ($lemma_id_result = mysqli_fetch_assoc($lemma_id)) {
+
+while($lemma_id_result = mysqli_fetch_assoc($lemma_id)) {
 
     $L_id = $lemma_id_result["L_id"];
 
@@ -93,15 +95,10 @@ if ($lemma_id_result = mysqli_fetch_assoc($lemma_id)) {
 
     echo "<a href='http://www.dwaks.gwi.uni-muenchen.de/alt/dictionary.php?lemma=" . $L_id . "' target='_blank'><span class='badge badge-pill badge-primary'>" . $lemma_full["L_lemma_full"] . "</span> </a>";
 
-}// ENDE
-
-
+}}// ENDE
 else{
-	echo"No additional information available.";
-}
-
-
-
+	echo"No additional information available";
+};
 
 
 ?>

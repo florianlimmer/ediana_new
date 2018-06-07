@@ -1,9 +1,11 @@
 
 
-function con_lemmaProposal(ID, counter){
+function con_lemmaProposal(ID, counter) {
 
     var name = "#proposal_content" + counter;
     lit_id = ID;
+    if ($(name).is(':empty')) {
+
 
         $.ajax({
             type: "POST",
@@ -15,6 +17,8 @@ function con_lemmaProposal(ID, counter){
 
             }
 
-        })};
+        })
+    }
+};
 
 
